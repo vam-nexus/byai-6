@@ -1,0 +1,707 @@
+body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1a1f35 0%, #2a2f66 100%);
+            color: white;
+            font-size: 16px;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            margin: 2rem auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-container {
+            display: flex;
+            justify-content: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .navbar {
+            width: 240px;
+            min-height: 70vh;
+            margin: 0;
+            padding: 1.5rem;
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            background-color: rgba(26, 31, 53, 0.8);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            position: sticky;
+            top: 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #7dd3fc;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            width: 300px;
+            white-space: nowrap;
+        }
+
+        .logo svg {
+            width: 32px;
+            height: 32px;
+            fill: #7dd3fc;
+        }
+
+        .hero {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+            position: relative;
+            background: transparent;
+            flex-direction: column;
+            padding: 1rem;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 1rem;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            font-weight: 800;
+        }
+
+        .highlight {
+            background-color: rgba(125, 211, 252, 0.2);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            color: #7dd3fc;
+        }
+
+        .hero p {
+            color: #94a3b8;
+            margin-bottom: 2rem;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        .cta-button {
+            background-color: #7dd3fc;
+            color: #1a1f35;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: all 0.2s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #93dcfd;
+            transform: translateY(-2px);
+        }
+
+        .decorative-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .course-card {
+            background: white;
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .course-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 24px rgba(0,0,0,0.15);
+        }
+
+        .course-card h3 {
+            font-size: 1.25rem;
+            margin: 0 0 1rem 0;
+            color: #1a1f35;
+        }
+
+        .course-card p {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .dashboard-layout {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .course-nav, .sidebar {
+            display: none;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 0 1rem;
+            color: white;
+            letter-spacing: -0.5px;
+            text-align: center;
+        }
+
+        .main-content {
+            flex: 1;
+            max-width: 900px;
+            padding: 1.5rem;
+            background-color: rgba(26, 31, 53, 0.4);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            margin: 0 auto;
+        }
+
+        .module-card {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 2rem;
+            border-radius: 16px;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: visible;
+            width: 100%;
+            max-width: 800px;
+            box-sizing: border-box;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .module-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+            border-color: rgba(125, 211, 252, 0.3);
+        }
+
+        .module-card.completed {
+            background: rgba(34, 197, 94, 0.05);
+            border-color: rgba(34, 197, 94, 0.2);
+        }
+
+        .module-card.completed .task-content {
+            text-decoration: line-through;
+            opacity: 0.7;
+        }
+
+        .module-card h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin: 0 0 1.5rem;
+            color: #7dd3fc;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            letter-spacing: -0.02em;
+        }
+
+        .module-card h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 1.5rem 0 0.5rem;
+            color: #e2e8f0;
+        }
+
+        .card-number {
+            position: absolute;
+            top: -12px;
+            left: -12px;
+            background: #1a1f35;
+            color: #7dd3fc;
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 0.5rem 0.75rem;
+            border-radius: 8px;
+            border: 2px solid #7dd3fc;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .task-checkbox {
+            position: absolute;
+            bottom: 1.75rem;
+            right: 1.75rem;
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            border: 2px solid rgba(125, 211, 252, 0.5);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .task-checkbox:checked {
+            background-color: #22c55e;
+            border-color: #22c55e;
+        }
+
+        .task-checkbox:checked::before {
+            content: "✓";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 16px;
+        }
+
+        .task-checkbox:hover {
+            border-color: #7dd3fc;
+        }
+
+        .task-content {
+            color: #e2e8f0;
+            font-size: 1rem;
+            line-height: 1.6;
+            transition: all 0.2s ease;
+            gap: 1rem;
+        }
+
+        .task-content p {
+            margin: 0.5rem 0 1rem;
+            color: #cbd5e1;
+        }
+
+        .task-content ul, .task-content ol {
+            padding-left: 1.5rem;
+            margin: 0.75rem 0;
+        }
+
+        .task-content ul {
+            list-style-type: none;
+        }
+
+        .task-content ul li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .task-content ul li::before {
+            content: "•";
+            color: #7dd3fc;
+            font-size: 1.2rem;
+            position: absolute;
+            left: 0;
+            top: -0.1rem;
+        }
+
+        .task-content ol li {
+            margin-bottom: 0.75rem;
+            padding-left: 0.5rem;
+        }
+
+        .task-content ul ul, .task-content ol ol, .task-content ul ol, .task-content ol ul {
+            margin: 0.5rem 0 0.5rem 0.5rem;
+        }
+
+        .task-content ul ul li::before {
+            content: "◦";
+            color: #94a3b8;
+        }
+
+        .task-content a {
+            color: #7dd3fc;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            border-bottom: 1px dotted rgba(125, 211, 252, 0.4);
+            padding-bottom: 1px;
+        }
+
+        .task-content a:hover {
+            color: #93dcfd;
+            border-bottom: 1px solid rgba(125, 211, 252, 0.8);
+        }
+
+        .task-content code {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.9rem;
+            color: #7dd3fc;
+        }
+
+        @media (max-width: 1024px) {
+            .dashboard-layout {
+                flex-direction: column;
+                align-items: center;
+                gap: 1.5rem;
+            }
+            .navbar {
+                width: 100%;
+                min-height: unset;
+                margin-right: 0;
+                margin-bottom: 1rem;
+                border-right: none;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                padding: 1rem;
+            }
+            .navbar-sections {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 0.5rem;
+            }
+            .navbar-sections li {
+                width: auto;
+                text-align: center;
+                margin-bottom: 0;
+                padding: 0.75rem 1rem;
+                flex: 1 1 auto;
+                min-width: 120px;
+            }
+            .main-content {
+                width: 100%;
+                max-width: 100%;
+                padding: 1rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                max-width: 95%;
+                padding: 1rem;
+            }
+
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 0.5rem;
+            }
+
+            .navbar-sections {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .navbar-sections li {
+                width: 100%;
+                text-align: left;
+                padding: 0.5rem 0;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 0.9rem;
+            }
+
+            .cta-button {
+                font-size: 0.9rem;
+                padding: 0.6rem 1.2rem;
+            }
+
+            .module-card {
+                width: 90%;
+                margin: 1rem auto;
+            }
+
+            .task-content ul {
+                flex-direction: column;
+            }
+
+            .task-content table {
+                display: block;
+                width: 100%;
+                overflow-x: auto;
+            }
+
+            .task-content td {
+                display: block;
+                width: 100%;
+                padding: 0.5rem 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .hero p {
+                font-size: 0.8rem;
+            }
+
+            .cta-button {
+                font-size: 0.8rem;
+                padding: 0.5rem 1rem;
+            }
+
+            .navbar-sections li {
+                padding: 0.4rem 0;
+            }
+        }
+
+        .sidebar {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: sticky;
+            top: 2rem;
+            height: calc(100vh - 4rem);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            overflow-y: auto;
+        }
+
+        .date-item {
+            padding: 0.5rem;
+            margin-bottom: 0.25rem;
+            border-radius: 8px;
+            color: #94a3b8;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .date-item strong {
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        .date-item p {
+            margin: 0.25rem 0;
+        }
+
+        .sidebar h3 {
+            margin: 0.75rem 0 0.5rem 0;
+        }
+
+        .task-content .rsvp-button,
+        .rsvp-button {
+            display: inline-block;
+            background-color: #3b718b;
+            color: white !important;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 0.5rem;
+            transition: all 0.2s ease;
+        }
+
+        .task-content .rsvp-button:hover,
+        .rsvp-button:hover {
+            background-color: #3a667b;
+            transform: translateY(-2px);
+            color: white !important;
+        }
+
+        .task-content a.rsvp-button {
+            color: white !important;
+        }
+
+        .section-header {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        .navbar-spacer {
+            display: none;
+        }
+
+        .navbar-sections {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+        }
+
+        .navbar-sections li {
+            padding: 0.85rem 1rem;
+            margin-bottom: 0.75rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            color: #e2e8f0;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .navbar-sections li:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateX(2px);
+        }
+
+        .navbar-sections li.active {
+            background-color: rgba(125, 211, 252, 0.2);
+            color: #7dd3fc;
+            font-weight: 600;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-label {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: #e2e8f0;
+            color: #1a1f35;
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 0.25rem 0.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .task-content table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+        }
+
+        .task-content td {
+            padding: 0.5rem;
+            vertical-align: top;
+        }
+
+        .task-content td:not(:last-child) {
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+            padding-right: 1.5rem;
+            margin-right: 1.5rem;
+        }
+
+        .rsvp-button {
+            display: inline-block;
+            margin-top: 0.5rem;
+        }
+
+        .main-content h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: white;
+            border-bottom: 2px solid rgba(125, 211, 252, 0.3);
+            padding-bottom: 0.75rem;
+        }
+
+        .main-content h4 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #94a3b8;
+            margin-top: 0;
+            margin-bottom: 2rem;
+        }
+
+        .banner {
+            width: 100%;
+            background-color: #1a1f35;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .banner-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .nav-dropdown {
+            position: relative;
+        }
+
+        .nav-dropdown select {
+            appearance: none;
+            background-color: rgba(125, 211, 252, 0.15);
+            border: 1px solid rgba(125, 211, 252, 0.3);
+            border-radius: 8px;
+            color: #7dd3fc;
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-weight: 500;
+            padding: 0.6rem 2.5rem 0.6rem 1rem;
+            transition: all 0.2s ease;
+            width: auto;
+            min-width: 200px;
+        }
+
+        .nav-dropdown select:hover {
+            background-color: rgba(125, 211, 252, 0.25);
+            border-color: rgba(125, 211, 252, 0.5);
+        }
+
+        .nav-dropdown select:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(125, 211, 252, 0.4);
+        }
+
+        .nav-dropdown::after {
+            content: "▼";
+            color: #7dd3fc;
+            font-size: 0.7rem;
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            pointer-events: none;
+        }
+
+        @media (max-width: 768px) {
+            .banner-content {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+            
+            .nav-dropdown select {
+                width: 100%;
+                min-width: 250px;
+            }
+        }
+
+        .header {
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding: 1rem 0;
+        }

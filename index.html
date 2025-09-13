@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BYAI-6 - Build your AI Idea in Six Weeks</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Mobile and responsive fixes */
+        @media (max-width: 768px) {
+            .module-card {
+                padding: 1.5rem;
+                width: 100%;
+                margin: 1rem 0;
+                box-sizing: border-box;
+            }
+            
+            .banner-content {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+                padding: 0.5rem 0;
+            }
+            
+            .logo {
+                font-size: 1.2rem;
+                width: auto;
+            }
+            
+            .logo svg {
+                width: 24px;
+                height: 24px;
+            }
+            
+            .nav-dropdown select {
+                width: 100%;
+                min-width: 200px;
+            }
+            
+            .task-content table {
+                width: 100%;
+                display: block;
+            }
+            
+            .task-content table tbody, 
+            .task-content table tr {
+                display: block;
+                width: 100%;
+            }
+            
+            .task-content td {
+                display: block;
+                width: 100%;
+                padding: 0.5rem 0;
+                border-right: none !important;
+                box-sizing: border-box;
+            }
+            
+            h1, h2 {
+                font-size: 1.5rem !important;
+                width: 100% !important;
+            }
+            
+            h3 {
+                font-size: 1.2rem !important;
+                word-wrap: break-word;
+            }
+            
+            h4 {
+                font-size: 1rem !important;
+                width: 100% !important;
+            }
+            
+            .action-list, .deliverable-list {
+                padding-left: 1rem;
+            }
+            
+            /* Fix for container width */
+            .container {
+                width: 100% !important;
+                padding: 0 10px;
+                box-sizing: border-box;
+            }
+            
+            /* Ensure content doesn't overflow */
+            .task-content {
+                overflow-wrap: break-word;
+                word-wrap: break-word;
+            }
+            
+            /* Make sure links don't cause overflow */
+            a {
+                word-break: break-word;
+            }
+            
+            /* Video gallery responsive fixes */
+            .video-gallery {
+                grid-template-columns: 1fr !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .module-card {
+                padding: 1rem;
+                width: 100%;
+                box-sizing: border-box;
+            }
+            
+            .card-number {
+                top: -10px;
+                left: -10px;
+                font-size: 0.75rem;
+                padding: 0.4rem 0.6rem;
+            }
+            
+            .section-label {
+                font-size: 0.75rem;
+                padding: 0.2rem 0.4rem;
+            }
+            
+            .task-checkbox {
+                width: 20px;
+                height: 20px;
+                bottom: 1.25rem;
+                right: 1.25rem;
+            }
+            
+            /* Ensure text doesn't overflow */
+            p, li, td, a {
+                font-size: 0.9rem;
+                overflow-wrap: break-word;
+            }
+            
+            /* Video gallery item adjustments for small screens */
+            .video-item {
+                margin-bottom: 1.5rem;
+            }
+        }
+        
+        /* Base styles to ensure proper box sizing */
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100%;
+        }
+        
+        .countdown-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 5px;
+        }
+        
+        .countdown-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 50px;
+        }
+        
+        /* Video Gallery Styling */
+        .video-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .video-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .video-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .video-thumbnail {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%; /* 16:9 aspect ratio */
+            overflow: hidden;
+        }
+        
+        .video-thumbnail img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .video-item:hover .video-thumbnail img {
+            transform: scale(1.05);
+        }
+        
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .play-button:after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 0;
+            border-top: 12px solid transparent;
+            border-bottom: 12px solid transparent;
+            border-left: 20px solid white;
+            margin-left: 5px;
+        }
+        
+        .video-item h4 {
+            color: white;
+            margin: 15px 15px 5px 15px;
+            font-size: 1.1rem;
+        }
+        
+        .author-name {
+            color: #9dfcff;
+            margin: 0 15px 15px 15px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <div class="banner-content">
+            <div class="logo-container">
+                <a href="/" class="logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M12 2L1 12h3v9h6v-6h4v6h6v-9h3L12 2zm0 2.5L18.5 11H17v9h-2v-6H9v6H7v-9H5.5L12 4.5z"/>
+                    </svg>
+                    Build Your AI in Six Weeks (BYAI-6)
+                </a>
+            </div>
+            <div id="countdown-timer" style="color: white; font-weight: bold; text-align: center; margin: 0 auto; background: rgba(0,0,0,0.3); padding: 8px 15px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.2);">
+                <div class="countdown-title">
+                    <span id="days-remaining" class="countdown-value">0</span> days until Demo Day 
+                    (<span id="digital-clock">00:00:00</span>)
+                </div>
+            </div>
+            <div class="nav-dropdown">
+                <select id="section-selector" onchange="showWeek(this.value)">
+                    <option value="Week0" selected>Week 0 (Sep 13)</option>
+                    <option value="gallery">Video Gallery</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+       
+        
+        <div class="dashboard-layout">
+            <div class="main-content">
+                <div id="Week0" style="display: none;">
+                    <center>
+                        <h1 style="color: white; width: 80%; text-align: center;">🎉 Welcome to BYAI-6!</h1>
+                        <h2 style="color: rgb(224, 224, 224); width: 80%; text-align: center;">
+                            We're SO excited to start building with you! 🚀🤖</h2>
+                        <h4 style="color: white; width: 80%; text-align: center;">
+                            To make sure you're set up for success, here are the key things to do to get started:</h4>
+                    </center>
+                    
+                    <div class="module-card">
+                        <span class="card-number">1</span>
+                        <input type="checkbox" class="task-checkbox" onchange="toggleComplete(this)">
+                        <h3>📅 Register for next week's events</h3>
+                        <div class="task-content">
+                            <p class="highlight-text">I highly encourage coming to the lectures to get direct guidance on how you could make progress on your app (they will be recorded if you can't make it)</p>
+                            <h4>📝 Action Items:</h4>
+                            <ul class="action-list">
+                                <li>📚 <strong>Monday Lecture:</strong> <a href="https://luma.com/eksbdaj2" target="_blank">Register Here</a></li>
+                                <li>💻 <strong>Thursday In-Person Co-Working:</strong> <a href="https://luma.com/i513rgi4" target="_blank">Register Here</a></li>
+                                <li>🧠 <strong>Saturday Office Hours:</strong> <a href="https://luma.com/9up5ezpt" target="_blank">Register Here</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="module-card">
+                        <span class="card-number">2</span>
+                        <input type="checkbox" class="task-checkbox" onchange="toggleComplete(this)">
+                        <h3>📋 Fill out the quick form</h3>
+                        <div class="task-content">
+                            <p class="highlight-text">Please fill out this quick form → <a href="https://forms.gle/7Tsatfgih5o5y66P6" target="_blank">https://forms.gle/7Tsatfgih5o5y66P6</a></p>
+                            <p>We'd love to know:</p>
+                            <ul>
+                                <li>🧠 Your skill level and background</li>
+                                <li>💡 What kind of AI project or idea you want to build</li>
+                                <li>👯 Whether you're joining solo or as part of a team</li>
+                            </ul>
+                            <p>This helps us tailor the experience and support to you 🔧✨</p>
+                        </div>
+                    </div>
+
+                    <div class="module-card">
+                        <span class="card-number">3</span>
+                        <input type="checkbox" class="task-checkbox" onchange="toggleComplete(this)">
+                        <h3>💬 Join the Discord</h3>
+                        <div class="task-content">
+                            <p class="highlight-text">Join the Discord → <a href="https://discord.gg/mSypJZkC" target="_blank">https://discord.gg/mSypJZkC</a></p>
+                            <p>This will be our main space for all communication, Q&A, updates, and collaboration! 💬🤝</p>
+                            <p>Once you're in, head to the <a href="https://discord.com/channels/1413524932213735567/1413526298763984927" target="_blank">#introductions channel</a> and share:</p>
+                            <ul>
+                                <li>🙋 A few words about yourself</li>
+                                <li>🎯 Why you joined this course</li>
+                                <li>🎉 Something cool or fun about you (we love fun facts!)</li>
+                            </ul>
+                            <p>This helps the community connect, support, and grow together from day one 🌱✨</p>
+                            <p class="highlight-text">💡 <strong>Share your project idea</strong> in the <a href="https://discord.com/channels/1413524932213735567/1415691240434958419" target="_blank">project-ideas Discord channel</a>!</p>
+                        </div>
+                    </div>
+
+                    <div class="module-card">
+                        <span class="card-number">4</span>
+                        <input type="checkbox" class="task-checkbox" onchange="toggleComplete(this)">
+                        <h3>🛠️ Make sure you've got the right tools</h3>
+                        <div class="task-content">
+                            <p class="highlight-text">⚡ Install a Python IDE on your laptop.</p>
+                            <p>We highly recommend <a href="https://cursor.sh/" target="_blank">Cursor</a> as it has a strong AI coding assistant that would help you build your app.</p>
+                            <h4>📝 Action Items:</h4>
+                            <ul class="action-list">
+                                <li>🐍 Test that you can run Python from your terminal:
+                                    <ul>
+                                        <li>📝 Create a file called hello_world.py</li>
+                                        <li>✍️ Add this line: print("hello world")</li>
+                                        <li>▶️ Run it with: python hello_world.py</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="module-card">
+                        <span class="card-number">5</span>
+                        <input type="checkbox" class="task-checkbox" onchange="toggleComplete(this)">
+                        <h3>🐍 Python Learning Resources (If Needed)</h3>
+                        <div class="task-content">
+                            <p class="highlight-text">If you are not familiar with Python, I encourage you to either:</p>
+                            <ul class="action-list">
+                                <li>📚 Take this free online Zero-to-Hero Python Crash course: <a href="https://www.deeplearning.ai/short-courses/ai-python-for-beginners/" target="_blank">AI Python for Beginners</a></li>
+                                <li>🏫 Or this $35 in-person Python Crash Course that I will be offering next month: <a href="https://luma.com/pzd4comy" target="_blank">Register Here</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="module-card">
+                        <span class="card-number">6</span>
+                        <input type="checkbox" class="task-checkbox" onchange="toggleComplete(this)">
+                        <h3>💡 Share Your Project Ideas</h3>
+                        <div class="task-content">
+                            <p class="highlight-text">Post your AI project ideas in the Discord project-ideas channel! 🚀</p>
+                            <p>Sharing your ideas early, even if they're not perfect, is one of the best ways to refine your AI concept and connect with potential collaborators. Your idea doesn't have to be fully formed! 🌱</p>
+                            
+                            <h4>📝 Action Items:</h4>
+                            <ul class="action-list">
+                                <li>💡 <strong>Share 3 project ideas</strong> in the <a href="https://discord.com/channels/1413524932213735567/1415691240434958419" target="_blank">project-ideas Discord channel</a></li>
+                                <li>💬 <strong>Provide feedback</strong> on 3 other project ideas posted in the channel</li>
+                                <li>🤝 <strong>Connect with others</strong> who have similar interests or complementary skills</li>
+                            </ul>
+                            
+                            <p>This is a great way to expand your horizons by seeing what others are building, connect with potential teammates, and get valuable feedback to refine your concept! 🌟</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="Week1" style="display: none;">
+                    <center>
+                    <h1 style="color: white; width: 80%; text-align: center;">Welcome to Week 1 🚀</h1>
+                    <h2 style="color: rgb(224, 224, 224); width: 80%; text-align: center;">
+                        We're so glad that you made it. Thank you for showing up. Here's everything you'll need for this week. ✨</h4>
+                    <h2 style="color: white; width: 80%; text-align: center;">Deadline for Finishing these Tasks<br> <span style="color: #ff6b6b;">Sunday May 25, 2025</span> ⏰ </h2>
+                    </center>
+
+                    <div class="module-card">
+                        <span class="card-number">1</span>
+                        <input type="checkbox" class="task-checkbox" onchange="toggleComplete(this)">
+                        <h3>📺 Watch the Kickoff Event (if you haven't already)</h3>
+                        <div class="task-content">
+                            <p class="highlight-text">If you haven't been to the kickoff event on May 17 (Saturday), please watch the recording to get up to speed. 🎬</p>
+                            
+                            <p>This event covers important information about the program structure, expectations, and introduces you to the AI concepts we'll be working with. 🤖</p>
+                            
+                            <h4>📝 Action Items:</h4>
+                            <ul class="action-list">
+                                <li>🎬 <strong>Watch the Kickoff Event Recording (May 17 Event):</strong> <a href="https://youtu.be/bAALHEITrwY" target="_blank">Watch on YouTube</a> 
+                                    <br> <ul><span style="font-style: italic;">Note: We apologize for the poor sound quality - hybrid sessions are always challenging 🎧</span></ul>  </li>
+                                <li>📊 <strong>View the Kickoff Event Slides:</strong> <a href="https://vancouver-ai-space--w7o8o99.gamma.site/-2" target="_blank">View Presentation</a></li>
+                            </ul>
+                            
+                           
+                        </div>
+                    </div>
+
+                    <div class="module-card">
+                        <span class="card-number">2</span>
+                        <input type="checkbox" class="task-checkbox" onchange="toggleComplete(this)">
+                        <h3>📅 Register for Week 1 Events</h3>
+                        <div class="task-content">
+                            
+                            <p class="highlight-text">Register for these 3 events to get support and connect with the community. 👥</p>
+                           
+                            <p>These events are the best way to connect with others in the program, get help with your assignments, and collaborate on your AI projects. 🤝</p>
+                            <h4>📝 Action Items:</h4>
+                            <ol type="I" class="action-list">
+                                <li>🧠 <strong>Online Q&A Office Hours</strong> - Ask Any Questions Related to this Week's Assignment (and/or AI)
+                                    <br>📅 Wednesday, May 21 • 5:30 PM - 6:30 PM PDT
+                                    <br>🔗 <a href="https://lu.ma/ttz7fnu2" target="_blank">RSVP Here</a>
+                                </li>
+                                <li>💻 <strong>In-Person Coworking Space</strong> - Work with each other and get support
+                                    <br>📅 Thursday, May 22 • 5:30 PM - 7:00 PM PDT
+                                    <br>🔗 <a href="https://lu.ma/1ljwz2kb" target="_blank">RSVP Here</a>
+                                </li>
+                                <li>🧠 <strong>Online Q&A Office Hours</strong> - Ask Any Questions Related to this Week's Assignment (and/or AI)
+                                    <br>📅 Saturday, May 24 • 11:00 AM - 12:15 PM PDT
+                                    <br>🔗 <a href="https://lu.ma/m6p80nhs" target="_blank">RSVP Here</a>
+                                </li>
+                            </ol>
+                            
+                        </div>
+                    </div>
+
+                    <div class="module-card">
+                        <span class="card-number">3</span>
+                        <input type="checkbox" class="task-checkbox" onchange="toggleComplete(this)">
+                        <h3>✨ This Week's Highlights</h3>
+                        <div class="task-content">
+                             <p>This week serves as a warm-up to get your environment ready and provide insight into how we can build an AI app. 🔍
+                                <br><br>
+                                It's a preview of what to expect in the development cycle of your project, from development setup and vibe coding to creating a domain-specific chatbot. 🛠️
+                                  <br>  <br>
+                                Next week, we'll focus on fine-tuning your app ideas and team formations will take place. 🤔</p>
+
+                                <p> Please ask any questions you might have in the <a href="https://discord.com/channels/1372507091817988136/1372510938313261056" target="_blank">questions Discord channel</a> - all questions are great!! ❓
+                                    <p style="font-style:italic;color:#ff6b6b;">Note: We will give a $50 prize for the person with the most questions asked and answered 🏆</p>
+                           
+                        </div>
+                    </div>
+
+                    <div class="module-card">
+                        <span class="card-number">4</span>
+                        <input type="checkbox" class="task-checkbox" onchange="toggleComplete(this)">
+                        <h3>📺 Watch Week 1's Lecture</h3>
+                        <div class="task-content">
+                            <p class="highlight-text">Watch this week's lecture to understand the key concepts we'll be working with. 🎓</p>
+                            
+                            <p>This lecture covers essential information about building your first AI chatbot and preparing for your project. 🤖</p>
+                            
+                            <h4>📝 Action Items:</h4>
+                            <ul class="action-list">
+                                <li>🎬 <strong>Watch Week 1's Lecture:</strong> <a href="https://www.youtube.com/watch?v=ELV9pAR7Qpc" target="_blank">Watch on YouTube</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="module-card">
+                        <span class="card-number">5</span>
+                        <input type="checkbox" class="task-checkbox" onchange="toggleComplete(this)">
+                        <h3>🤖 Build Your First AI Chatbot</h3>
+                        <div class="task-content">
+                            <p class="highlight-text">Follow these steps (also shown in the lecture) to create your first domain-specific AI chatbot. 💬</p>
+                            
+                            <h4>📝 Action Items (as shown in the lecture):</h4>
+                            <ol class="action-list">
+                                <li>⚙️ Install <a href="https://cursor.sh/" target="_blank">Cursor</a> and create:
+                                    <ul>
+                                        <li>🌱 A simple "hello world" Python script</li>
+                                        <li>🚀 A more fancy version with some additional features</li>
+                                    </ul>
+                                </li>
+                                <li>📂 Create a GitHub repository for your chatbot project</li>
+                                <li>🔄 Clone the GitHub repo, open it with Cursor, create <code>main.py</code> and copy the chatbot base script from <a href="https://github.com/IssamLaradji/cool-ai-scripts/blob/main/basic_chatbot.py" target="_blank">this repository</a> into <code>main.py</code>
+                                    <ul>
+                                        <li>🔑 Sign up with <a href="https://together.ai" target="_blank">Together.ai</a> to get a free $1 credit to access different LLMs online and retrieve the API key to use for the LLMs</li>
+                                        <li>▶️ Run the main.py code with the base script using: <br><code>python main.py -o 1 -k &lt;your_together_api_key&gt;</code></li>
+                                        <li>🔄 Repeat the process with <code>-o 2</code> and <code>-o 3</code> to try different programs. 
+                                            <li> To run the chatbot, use <code>-o 4</code></li>
+                                    </ul>
+                                </li>
+                                <li>🧠 Modify the chatbot script to specialize it for your domain (such as a therapist chatbot that only loves to talk about himself with Michael Jackson quotes)</li>
+                                <li>🔄 Share your GitHub link to the code and a small video (or screenshot) of your interaction with the chatbot in the <a href="https://discord.com/channels/1372507091817988136/1372511186116939847" target="_blank">🚀-week-1-outputs Discord channel</a></li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="module-card">
+                        <span class="card-number">6</span>
+                        <input type="checkbox" class="task-checkbox" onchange="toggleComplete(this)">
+                        <h3>💡 Share Your Project Ideas</h3>
+                        <div class="task-content">
+                            <p class="highlight-text">Post your AI project ideas in the Discord channel and give feedback to others. 🚀</p>
+                            
+                            <p>Sharing your ideas early, even if they're not perfect, is one of the best ways to refine your AI idea and connect with potential collaborators. Your idea doesn't have to be fully formed or perfect! 🌱</p>
+                            
+                            <h4>📝 Action Items:</h4>
+                            <ol class="action-list">
+                                <li>🚀 <strong>Post your project idea</strong> in the <a href="https://discord.com/channels/1372507091817988136/1373038531550646342" target="_blank">project-ideas Discord channel</a>. 
+                              
+                                </li>
+                                <li>💬 <strong>Provide feedback</strong> on at least 3 other project ideas in the channel
+                                </li>
+                            </ol>
+                            
+                            <h4>📋 This is a great way to expand your horizons by seeing what others are building, connect with others and get valuable feedback to refine your concept before development. 🌟
+                               
+                        </div>
+                    </div>
+
+                    <div class="module-card">
+                        <span class="card-number">7</span>
+                        <input type="checkbox" class="task-checkbox" onchange="toggleComplete(this)">
+                        <h3>🔗 Share on LinkedIn (Optional)</h3>
+                        <div class="task-content">
+                            <p class="highlight-text">Announce your AI App building journey on LinkedIn to build accountability and gain community support. 📣</p>
+                            
+                            <p>Sharing your journey publicly is a powerful way to stay committed to your goals and connect with others in the AI space. 
+                                
+                                <br><br>
+                                Many participants have found that posting about their progress led to increased visibility, networking opportunities, and community support. 🌐</p>
+                            
+                            <p>Post the link to the LinkedIn post in the <a href="https://discord.com/channels/1372507091817988136/1372511186116939847" target="_blank">🚀-week-1-outputs Discord channel</a> so we could repost it and make you famous. 🌟
+                        </div>
+                    </div>
+
+                    <div class="module-card">
+                        <span class="card-number">8</span>
+                        <input type="checkbox" class="task-checkbox" onchange="toggleComplete(this)">
+                        <h3>✅ Submit Completion Form</h3>
+                        <div class="task-content">
+                            <p class="highlight-text">Submit this form to indicate you've completed this week's tasks. 📝</p>
+                            
+                            <p>Once you've completed all the tasks for Week 1, please fill out the completion form to let us know about your progress. 🏁</p>
+                            
+                            <h4>📝 Action Items:</h4>
+                            <ol class="action-list">
+                                <li>🗓️ <strong>Deadline:</strong> Sunday, May 25, 2025</li>
+                                <li>📝 <strong>Submit the form:</strong> <a href="https://forms.gle/ge636mkVZqkbEiN87" target="_blank">Week 1 Completion Form</a></li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="gallery" style="display: none;">
+                    <center>
+                        <h2 style="color: white; width: 80%; text-align: left;">Video Gallery</h2>
+                        <h4 style="color: white; width: 80%; text-align: left;">
+                            Explore some of the previous submitted projects.</h4>
+                    </center>
+                    
+                    <div class="video-gallery">
+                        <div class="video-item">
+                            <div class="video-thumbnail">
+                                <a href="https://youtu.be/w0QIJDSohpU" target="_blank">
+                                    <img src="https://img.youtube.com/vi/w0QIJDSohpU/mqdefault.jpg" alt="Video thumbnail">
+                                    <div class="play-button"></div>
+                                </a>
+                            </div>
+                            <h4>Live Notes AI</h4>
+                            <p class="author-name">by Matt Dirks</p>
+                        </div>
+                        
+                        <div class="video-item">
+                            <div class="video-thumbnail">
+                                <a href="https://youtu.be/zppQz9VO3RA" target="_blank">
+                                    <img src="https://img.youtube.com/vi/zppQz9VO3RA/mqdefault.jpg" alt="Video thumbnail">
+                                    <div class="play-button"></div>
+                                </a>
+                            </div>
+                            <h4>Shop Assist Agent</h4>
+                            <p class="author-name">by Reza</p>
+                        </div>
+                        
+                        <div class="video-item">
+                            <div class="video-thumbnail">
+                                <a href="https://www.youtube.com/watch?v=snzEhz6_S1A" target="_blank">
+                                    <img src="https://img.youtube.com/vi/snzEhz6_S1A/mqdefault.jpg" alt="Video thumbnail">
+                                    <div class="play-button"></div>
+                                </a>
+                            </div>
+                            <h4>AIComparely</h4>
+                            <p class="author-name">by Murilo</p>
+                        </div>
+                        
+                        <div class="video-item">
+                            <div class="video-thumbnail">
+                                <a href="https://www.youtube.com/watch?v=ZQk1MGm-dYw" target="_blank">
+                                    <img src="https://img.youtube.com/vi/ZQk1MGm-dYw/mqdefault.jpg" alt="Video thumbnail">
+                                    <div class="play-button"></div>
+                                </a>
+                            </div>
+                            <h4>Husky Interview Prep</h4>
+                            <p class="author-name">by Cathy</p>
+                        </div>
+                        
+                        <div class="video-item">
+                            <div class="video-thumbnail">
+                                <a href="https://youtu.be/9ODsNk8ucZM" target="_blank">
+                                    <img src="https://img.youtube.com/vi/9ODsNk8ucZM/mqdefault.jpg" alt="Video thumbnail">
+                                    <div class="play-button"></div>
+                                </a>
+                            </div>
+                            <h4>Travel Buddy</h4>
+                            <p class="author-name">by Paolo</p>
+                        </div>
+                        
+                        <div class="video-item">
+                            <div class="video-thumbnail">
+                                <a href="https://www.youtube.com/watch?v=dxq0UA4zCbA" target="_blank">
+                                    <img src="https://img.youtube.com/vi/dxq0UA4zCbA/mqdefault.jpg" alt="Video thumbnail">
+                                    <div class="play-button"></div>
+                                </a>
+                            </div>
+                            <h4>JobLeaper</h4>
+                            <p class="author-name">by Colm</p>
+                        </div>
+                        
+                        <div class="video-item">
+                            <div class="video-thumbnail">
+                                <a href="https://youtu.be/BlZrtQDHvTw" target="_blank">
+                                    <img src="https://img.youtube.com/vi/BlZrtQDHvTw/mqdefault.jpg" alt="Video thumbnail">
+                                    <div class="play-button"></div>
+                                </a>
+                            </div>
+                            <h4>GitHub Helper</h4>
+                            <p class="author-name">by Ming</p>
+                        </div>
+                        
+                        <div class="video-item">
+                            <div class="video-thumbnail">
+                                <a href="https://www.youtube.com/watch?v=dnVLrIUVdhw" target="_blank">
+                                    <img src="https://img.youtube.com/vi/dnVLrIUVdhw/mqdefault.jpg" alt="Video thumbnail">
+                                    <div class="play-button"></div>
+                                </a>
+                            </div>
+                            <h4>Peak Buddy</h4>
+                            <p class="author-name">by Helena</p>
+                        </div>
+                        
+                        <div class="video-item">
+                            <div class="video-thumbnail">
+                                <a href="https://youtu.be/MJ7j0JNCHaY" target="_blank">
+                                    <img src="https://img.youtube.com/vi/MJ7j0JNCHaY/mqdefault.jpg" alt="Video thumbnail">
+                                    <div class="play-button"></div>
+                                </a>
+                            </div>
+                            <h4>W.AI.TLIST</h4>
+                            <p class="author-name">by Steven</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="resources" style="display: none;">
+                    <center>
+                    <h2 style="color: white; width: 80%; text-align: left;">Resources</h2>
+                    <h4 style="color: white; width: 80%; text-align: left;">
+                        Here you can find various resources to help you with your AI projects.</h4>
+                    </center>
+                    
+                    
+                       <div class="module-card">
+                       
+                        <h3>🎓 Useful Links</h3>
+                        <div class="task-content">
+                            <ul>
+                                <li><a href="https://docs.google.com/spreadsheets/d/1uxjXTjgNw8O-tXzTEczzi0IqpEg5OafEJ81aodHFP8Y/edit?usp=sharing" target="_blank">Submission Excel Sheet</a></li>
+                                <li><a href="https://discord.com/channels/1342145014628880436/1342145014628880439" target="_blank">Discord Link</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                      <div class="module-card">
+                       
+                        <h3>🎓 Lectures & Recordings</h3>
+                        <div class="task-content">
+                            <h4>Week 1 Content:</h4>
+                            <ul>
+                                <li><strong>Lecture 1 (Monday) - Agentic AI:</strong> <a href="https://www.youtube.com/watch?v=otLpat5nm3A" target="_blank">Watch Recording</a></li>
+                                <li><strong>Lecture 1 (Wednesday) - Agentic AI:</strong> <a href="http://youtube.com/watch?v=08whgHNfCc8" target="_blank">Watch Recording</a></li>
+                            </ul>
+                        </div>
+                    </div>
+<div class="module-card">
+                        <h3>🌐 Official Links & Orientation</h3>
+                        <div class="task-content">
+                            <ul>
+                                <li><strong>Orientation Recording:</strong> <a href="https://us06web.zoom.us/rec/share/mkhF8djhv74lVNY3u-AW9JmTj2Zl7ptOseixKcbJ6nuw8yOyz2RAJopI4i5KRaFg.FA5rTW_0jlahmJWb?startTime=1740259973000" target="_blank">Watch the recording</a><br>
+                               </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="module-card">
+                        <h3>💡 Learning & Project Ideas</h3>
+                        <div class="task-content">
+                            <ul>
+                                <li><strong>AI Project Inspiration:</strong> <a href="https://ai-in-the-loop--v4cc5yr.gamma.site/" target="_blank">Creative AI project ideas to spark innovation</a></li>
+                                <li><strong>DeepLearning.AI Courses:</strong> <a href="https://www.deeplearning.ai/courses/" target="_blank">Curated by Andrew Ng, with focused 2-hour lessons</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                  
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showWeek(weekId, element) {
+            // Hide all weeks
+            document.querySelectorAll('.main-content > div').forEach(div => {
+                div.style.display = 'none';
+            });
+            
+            // Show selected week
+            document.getElementById(weekId).style.display = 'block';
+            
+            // Update dropdown selection
+            const dropdown = document.getElementById('section-selector');
+            if (dropdown) {
+                dropdown.value = weekId;
+            }
+
+            // Update URL only if it's different from current hash
+            if (window.location.hash !== `#${weekId}`) {
+                history.pushState({}, '', `#${weekId}`);
+            }
+        }
+
+        // Handle URL-based navigation
+        function handleUrlSection() {
+            const hash = window.location.hash.slice(1) || 'Week6'; // default to Week5 if no hash
+            showWeek(hash);
+        }
+
+        // Listen for URL changes (back/forward navigation)
+        window.addEventListener('popstate', handleUrlSection);
+
+        // Initialize the correct section based on URL on page load
+        window.addEventListener('load', handleUrlSection);
+        window.addEventListener('hashchange', handleUrlSection);
+
+        function toggleComplete(checkbox) {
+            const moduleCard = checkbox.closest('.module-card');
+            if (checkbox.checked) {
+                moduleCard.classList.add('completed');
+            } else {
+                moduleCard.classList.remove('completed');
+            }
+            
+            // Save state to localStorage
+            saveProgress();
+        }
+
+        function saveProgress() {
+            const progress = {};
+            document.querySelectorAll('.module-card:not(.event-card)').forEach((card, index) => {
+                const checkbox = card.querySelector('.task-checkbox');
+                if (checkbox) {
+                    progress[index] = checkbox.checked;
+                }
+            });
+            localStorage.setItem('moduleProgress', JSON.stringify(progress));
+        }
+
+        function loadProgress() {
+            const progress = JSON.parse(localStorage.getItem('moduleProgress') || '{}');
+            document.querySelectorAll('.module-card:not(.event-card)').forEach((card, index) => {
+                const checkbox = card.querySelector('.task-checkbox');
+                if (checkbox && progress[index]) {
+                    checkbox.checked = true;
+                    card.classList.add('completed');
+                }
+            });
+        }
+
+        // Load saved progress when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            loadProgress();
+            
+            // Add CSS for event cards
+            const style = document.createElement('style');
+            style.textContent = `
+                .event-card {
+                    background: linear-gradient(135deg, #2a3a4a 0%, #1a2a3a 100%);
+                    border-left: 4px solid #9dfcff;
+                }
+                .event-card h3 {
+                    color: #9dfcff;
+                }
+                
+                /* Ensure container is responsive */
+                .container {
+                    width: 95%;
+                    padding: 0 10px;
+                }
+                
+                /* Fix for tables on mobile */
+                @media (max-width: 768px) {
+                    .task-content table, .task-content tbody, .task-content tr {
+                        display: block;
+                        width: 100%;
+                    }
+                    
+                    #countdown-timer {
+                        font-size: 0.9rem;
+                        margin: 0.5rem 0;
+                    }
+                }
+                
+                #countdown-timer {
+                    background-color: rgba(0, 0, 0, 0.2);
+                    padding: 5px 10px;
+                    border-radius: 4px;
+                    font-size: 1rem;
+                }
+            `;
+            document.head.appendChild(style);
+            
+            // Calculate and display countdown to demo day
+            updateDemoCountdown();
+            // Update countdown every second instead of every day
+            setInterval(updateDemoCountdown, 1000);
+        });
+
+        function updateDemoCountdown() {
+            const demoDate = new Date('November 1, 2025');
+            const today = new Date();
+            
+            // Calculate time difference in milliseconds
+            const timeDiff = demoDate.getTime() - today.getTime();
+            
+            // Calculate days, hours, minutes, and seconds
+            const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+            
+            // Update the countdown display
+            document.getElementById('days-remaining').textContent = days;
+            
+            // Format digital clock (HH:MM:SS)
+            const formattedHours = hours.toString().padStart(2, '0');
+            const formattedMinutes = minutes.toString().padStart(2, '0');
+            const formattedSeconds = seconds.toString().padStart(2, '0');
+            document.getElementById('digital-clock').textContent = 
+                `${formattedHours}:${formattedMinutes}:${formattedSeconds}`;
+            
+            // Add color based on urgency
+            if (days <= 7) {
+                document.getElementById('days-remaining').style.color = '#ff6b6b'; // Red for urgent
+            } else if (days <= 30) {
+                document.getElementById('days-remaining').style.color = '#ffd166'; // Yellow for approaching
+            } else {
+                document.getElementById('days-remaining').style.color = '#06d6a0'; // Green for plenty of time
+            }
+        }
+
+        // Add responsive handling for orientation changes
+        window.addEventListener('resize', function() {
+            // Adjust any elements that need resizing on window change
+            const moduleCards = document.querySelectorAll('.module-card');
+            if (window.innerWidth <= 480) {
+                moduleCards.forEach(card => {
+                    card.style.width = '100%';
+                });
+            }
+        });
+    </script>
+</body>
+</html>
