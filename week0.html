@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BYAI-6 - Build your AI Idea in Six Weeks</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="banner">
+        <div class="banner-content">
+            <div class="logo-container">
+                <a href="/" class="logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M12 2L1 12h3v9h6v-6h4v6h6v-9h3L12 2zm0 2.5L18.5 11H17v9h-2v-6H9v6H7v-9H5.5L12 4.5z"/>
+                    </svg>
+                    Build Your AI in Six Weeks (BYAI-6)
+                </a>
+            </div>
+            <div id="countdown-timer" style="color: white; font-weight: bold; text-align: center; margin: 0 auto; background: rgba(0,0,0,0.3); padding: 8px 15px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.2);">
+                <div class="countdown-title">
+                    <span id="days-remaining" class="countdown-value">0</span> days until Demo Day 
+                    (<span id="digital-clock">00:00:00</span>)
+                </div>
+            </div>
+            <div class="nav-dropdown">
+                <select id="section-selector" onchange="showWeek(this.value)">
+                    <option value="Week0" selected>Week 0 (Sep 13)</option>
+                    <option value="gallery">Video Gallery</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+       
+        
+        <div class="dashboard-layout">
+            <div class="main-content">
+                <div id="Week0" style="display: block;">
+                    <center>
+                        <h1 style="color: white; width: 80%; text-align: center;">🎉 Welcome to BYAI-6!</h1>
+                        <h2 style="color: rgb(224, 224, 224); width: 80%; text-align: center;">
+                            We're SO excited to start building with you! 🚀🤖</h2>
+                        <h4 style="color: white; width: 80%; text-align: center;">
+                            To make sure you're set up for success, here are the key things to do to get started:</h4>
+                    </center>
+                    
+                    <div class="module-card">
+                        <span class="card-number">1</span>
+                        <input type="checkbox" class="task-checkbox" onchange="toggleComplete(this)">
+                        <h3>📅 Register for next week's events</h3>
+                        <div class="task-content">
+                            <p class="highlight-text">I highly encourage coming to the lectures to get direct guidance on how you could make progress on your app (they will be recorded if you can't make it)</p>
+                            <h4>📝 Action Items:</h4>
+                            <ul class="action-list">
+                                <li>📚 <strong>Monday Lecture:</strong> <a href="https://luma.com/eksbdaj2" target="_blank">Register Here</a></li>
+                                <li>💻 <strong>Thursday In-Person Co-Working:</strong> <a href="https://luma.com/i513rgi4" target="_blank">Register Here</a></li>
+                                <li>🧠 <strong>Saturday Office Hours:</strong> <a href="https://luma.com/9up5ezpt" target="_blank">Register Here</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="module-card">
+                        <span class="card-number">2</span>
+                        <input type="checkbox" class="task-checkbox" onchange="toggleComplete(this)">
+                        <h3>📋 Fill out the quick form</h3>
+                        <div class="task-content">
+                            <p class="highlight-text">Please fill out this quick form → <a href="https://forms.gle/7Tsatfgih5o5y66P6" target="_blank">https://forms.gle/7Tsatfgih5o5y66P6</a></p>
+                            <p>We'd love to know:</p>
+                            <ul>
+                                <li>🧠 Your skill level and background</li>
+                                <li>💡 What kind of AI project or idea you want to build</li>
+                                <li>👯 Whether you're joining solo or as part of a team</li>
+                            </ul>
+                            <p>This helps us tailor the experience and support to you 🔧✨</p>
+                        </div>
+                    </div>
+
+                    <div class="module-card">
+                        <span class="card-number">3</span>
+                        <input type="checkbox" class="task-checkbox" onchange="toggleComplete(this)">
+                        <h3>💬 Join the Discord</h3>
+                        <div class="task-content">
+                            <p class="highlight-text">Join the Discord → <a href="https://discord.gg/mSypJZkC" target="_blank">https://discord.gg/mSypJZkC</a></p>
+                            <p>This will be our main space for all communication, Q&A, updates, and collaboration! 💬🤝</p>
+                            <p>Once you're in, head to the <a href="https://discord.com/channels/1413524932213735567/1413526298763984927" target="_blank">#introductions channel</a> and share:</p>
+                            <ul>
+                                <li>🙋 A few words about yourself</li>
+                                <li>🎯 Why you joined this course</li>
+                                <li>🎉 Something cool or fun about you (we love fun facts!)</li>
+                            </ul>
+                            <p>This helps the community connect, support, and grow together from day one 🌱✨</p>
+                            <p class="highlight-text">💡 <strong>Share your project idea</strong> in the <a href="https://discord.com/channels/1413524932213735567/1415691240434958419" target="_blank">project-ideas Discord channel</a>!</p>
+                        </div>
+                    </div>
+
+                    <div class="module-card">
+                        <span class="card-number">4</span>
+                        <input type="checkbox" class="task-checkbox" onchange="toggleComplete(this)">
+                        <h3>🛠️ Make sure you've got the right tools</h3>
+                        <div class="task-content">
+                            <p class="highlight-text">⚡ Install a Python IDE on your laptop.</p>
+                            <p>We highly recommend <a href="https://cursor.sh/" target="_blank">Cursor</a> as it has a strong AI coding assistant that would help you build your app.</p>
+                            <h4>📝 Action Items:</h4>
+                            <ul class="action-list">
+                                <li>🐍 Test that you can run Python from your terminal:
+                                    <ul>
+                                        <li>📝 Create a file called hello_world.py</li>
+                                        <li>✍️ Add this line: print("hello world")</li>
+                                        <li>▶️ Run it with: python hello_world.py</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="module-card">
+                        <span class="card-number">5</span>
+                        <input type="checkbox" class="task-checkbox" onchange="toggleComplete(this)">
+                        <h3>🐍 Python Learning Resources (If Needed)</h3>
+                        <div class="task-content">
+                            <p class="highlight-text">If you are not familiar with Python, I encourage you to either:</p>
+                            <ul class="action-list">
+                                <li>📚 Take this free online Zero-to-Hero Python Crash course: <a href="https://www.deeplearning.ai/short-courses/ai-python-for-beginners/" target="_blank">AI Python for Beginners</a></li>
+                                <li>🏫 Or this $35 in-person Python Crash Course that I will be offering next month: <a href="https://luma.com/ijpazyx6" target="_blank">Register Here</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="module-card">
+                        <span class="card-number">6</span>
+                        <input type="checkbox" class="task-checkbox" onchange="toggleComplete(this)">
+                        <h3>👥 Join a Support/AccountabilityTeam</h3>
+                        <div class="task-content">
+                            <p class="highlight-text">Get direct mentorship from co-facilitators by joining a support team! 🌟</p>
+                            <p>Each support team is led by an experienced co-facilitator who will provide personalized guidance, feedback, and support throughout your AI journey.  🚀</p>
+                            
+                            <h4>📝 Action Items:</h4>
+                            <ul class="action-list">
+                                <li>📝 <strong>Add your name</strong> to one of the support teams in this spreadsheet: <a href="https://docs.google.com/spreadsheets/d/1BeP7XgC5NnTjRcbjWaBVTLIb4HWiyCv_FmrJt1wp0qo/edit?usp=sharing" target="_blank">BYAI-6 Support Teams</a></li>
+                            </ul>
+                            
+                            
+                            <p>This is a great way to get more personalized support and motivation through this program. 🤝✨</p>
+                        </div>
+                    </div>
+
+                    <div class="module-card">
+                        <span class="card-number">7</span>
+                        <input type="checkbox" class="task-checkbox" onchange="toggleComplete(this)">
+                        <h3>💡 Share Your Project Ideas</h3>
+                        <div class="task-content">
+                            <p class="highlight-text">Post your AI project ideas in the Discord project-ideas channel! 🚀</p>
+                            <p>Sharing your ideas early, even if they're not perfect, is one of the best ways to refine your AI concept and connect with potential collaborators. Your idea doesn't have to be fully formed! 🌱</p>
+                            <p>💡 <strong>Need inspiration?</strong> You can find examples of previous projects here: <a href="https://vam-nexus.github.io/byai-6/#gallery" target="_blank">Project Gallery</a></p>
+                            
+                            <h4>📝 Action Items:</h4>
+                            <ul class="action-list">
+                                <li>💡 <strong>Share 3 project ideas</strong> in the <a href="https://discord.com/channels/1413524932213735567/1415691240434958419" target="_blank">project-ideas Discord channel</a></li>
+                                <li>💬 <strong>Provide feedback</strong> on 3 other project ideas posted in the channel</li>
+                                <li>🤝 <strong>Connect with others</strong> who have similar interests or complementary skills</li>
+                            </ul>
+                            
+                            <p>This is a great way to expand your horizons by seeing what others are building, connect with potential teammates, and get valuable feedback to refine your concept! 🌟</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="scripts.js"></script>
+</body>
+</html>

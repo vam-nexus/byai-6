@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BYAI-6 - Build your AI Idea in Six Weeks</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="banner">
+        <div class="banner-content">
+            <div class="logo-container">
+                <a href="/" class="logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M12 2L1 12h3v9h6v-6h4v6h6v-9h3L12 2zm0 2.5L18.5 11H17v9h-2v-6H9v6H7v-9H5.5L12 4.5z"/>
+                    </svg>
+                    Build Your AI in Six Weeks (BYAI-6)
+                </a>
+            </div>
+            <div id="countdown-timer" style="color: white; font-weight: bold; text-align: center; margin: 0 auto; background: rgba(0,0,0,0.3); padding: 8px 15px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.2);">
+                <div class="countdown-title">
+                    <span id="days-remaining" class="countdown-value">0</span> days until Demo Day 
+                    (<span id="digital-clock">00:00:00</span>)
+                </div>
+            </div>
+            <div class="nav-dropdown">
+                <select id="section-selector" onchange="showWeek(this.value)">
+                    <option value="Week0">Week 0 (Sep 13)</option>
+                    <option value="gallery" selected>Video Gallery</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+       
+        
+        <div class="dashboard-layout">
+            <div class="main-content">
+                
+                <div id="gallery" style="display: block;">
+                    <center>
+                        <h2 style="color: white; width: 80%; text-align: left;">Video Gallery</h2>
+                        <h4 style="color: white; width: 80%; text-align: left;">
+                            Explore some of the previous submitted projects.</h4>
+                    </center>
+                    
+                    <div class="video-gallery">
+                        <div class="video-item">
+                            <div class="video-thumbnail">
+                                <a href="https://youtu.be/w0QIJDSohpU" target="_blank">
+                                    <img src="https://img.youtube.com/vi/w0QIJDSohpU/mqdefault.jpg" alt="Video thumbnail">
+                                    <div class="play-button"></div>
+                                </a>
+                            </div>
+                            <h4>Live Notes AI</h4>
+                            <p class="author-name">by Matt Dirks</p>
+                        </div>
+                        
+                        <div class="video-item">
+                            <div class="video-thumbnail">
+                                <a href="https://youtu.be/zppQz9VO3RA" target="_blank">
+                                    <img src="https://img.youtube.com/vi/zppQz9VO3RA/mqdefault.jpg" alt="Video thumbnail">
+                                    <div class="play-button"></div>
+                                </a>
+                            </div>
+                            <h4>Shop Assist Agent</h4>
+                            <p class="author-name">by Reza</p>
+                        </div>
+                        
+                        <div class="video-item">
+                            <div class="video-thumbnail">
+                                <a href="https://www.youtube.com/watch?v=snzEhz6_S1A" target="_blank">
+                                    <img src="https://img.youtube.com/vi/snzEhz6_S1A/mqdefault.jpg" alt="Video thumbnail">
+                                    <div class="play-button"></div>
+                                </a>
+                            </div>
+                            <h4>AIComparely</h4>
+                            <p class="author-name">by Murilo</p>
+                        </div>
+                        
+                        <div class="video-item">
+                            <div class="video-thumbnail">
+                                <a href="https://www.youtube.com/watch?v=ZQk1MGm-dYw" target="_blank">
+                                    <img src="https://img.youtube.com/vi/ZQk1MGm-dYw/mqdefault.jpg" alt="Video thumbnail">
+                                    <div class="play-button"></div>
+                                </a>
+                            </div>
+                            <h4>Husky Interview Prep</h4>
+                            <p class="author-name">by Cathy</p>
+                        </div>
+                        
+                        <div class="video-item">
+                            <div class="video-thumbnail">
+                                <a href="https://youtu.be/9ODsNk8ucZM" target="_blank">
+                                    <img src="https://img.youtube.com/vi/9ODsNk8ucZM/mqdefault.jpg" alt="Video thumbnail">
+                                    <div class="play-button"></div>
+                                </a>
+                            </div>
+                            <h4>Travel Buddy</h4>
+                            <p class="author-name">by Paolo</p>
+                        </div>
+                        
+                        <div class="video-item">
+                            <div class="video-thumbnail">
+                                <a href="https://www.youtube.com/watch?v=dxq0UA4zCbA" target="_blank">
+                                    <img src="https://img.youtube.com/vi/dxq0UA4zCbA/mqdefault.jpg" alt="Video thumbnail">
+                                    <div class="play-button"></div>
+                                </a>
+                            </div>
+                            <h4>JobLeaper</h4>
+                            <p class="author-name">by Colm</p>
+                        </div>
+                        
+                        <div class="video-item">
+                            <div class="video-thumbnail">
+                                <a href="https://youtu.be/BlZrtQDHvTw" target="_blank">
+                                    <img src="https://img.youtube.com/vi/BlZrtQDHvTw/mqdefault.jpg" alt="Video thumbnail">
+                                    <div class="play-button"></div>
+                                </a>
+                            </div>
+                            <h4>GitHub Helper</h4>
+                            <p class="author-name">by Ming</p>
+                        </div>
+                        
+                        <div class="video-item">
+                            <div class="video-thumbnail">
+                                <a href="https://www.youtube.com/watch?v=dnVLrIUVdhw" target="_blank">
+                                    <img src="https://img.youtube.com/vi/dnVLrIUVdhw/mqdefault.jpg" alt="Video thumbnail">
+                                    <div class="play-button"></div>
+                                </a>
+                            </div>
+                            <h4>Peak Buddy</h4>
+                            <p class="author-name">by Helena</p>
+                        </div>
+                        
+                        <div class="video-item">
+                            <div class="video-thumbnail">
+                                <a href="https://youtu.be/MJ7j0JNCHaY" target="_blank">
+                                    <img src="https://img.youtube.com/vi/MJ7j0JNCHaY/mqdefault.jpg" alt="Video thumbnail">
+                                    <div class="play-button"></div>
+                                </a>
+                            </div>
+                            <h4>W.AI.TLIST</h4>
+                            <p class="author-name">by Steven</p>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+<script src="scripts.js"></script>
+</body>
+</html>
