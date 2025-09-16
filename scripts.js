@@ -36,7 +36,7 @@
 
         // Handle URL-based navigation
         function handleUrlSection() {
-            let defaultSection = 'Week0'; // default for most pages
+            let defaultSection = 'Week1'; // default for most pages
             
             // Set appropriate default based on current page
             if (window.location.pathname.includes('gallery.html')) {
