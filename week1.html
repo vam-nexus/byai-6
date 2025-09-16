@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BYAI-6 - Build your AI Idea in Six Weeks</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="banner">
+        <div class="banner-content">
+            <div class="logo-container">
+                <a href="/" class="logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M12 2L1 12h3v9h6v-6h4v6h6v-9h3L12 2zm0 2.5L18.5 11H17v9h-2v-6H9v6H7v-9H5.5L12 4.5z"/>
+                    </svg>
+                    Build Your AI in Six Weeks (BYAI-6)
+                </a>
+            </div>
+            <div id="countdown-timer" style="color: white; font-weight: bold; text-align: center; margin: 0 auto; background: rgba(0,0,0,0.3); padding: 8px 15px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.2);">
+                <div class="countdown-title">
+                    <span id="days-remaining" class="countdown-value">0</span> days until Demo Day 
+                    (<span id="digital-clock">00:00:00</span>)
+                </div>
+            </div>
+            <div class="nav-dropdown">
+                <select id="section-selector" onchange="showWeek(this.value)">
+                    <option value="Week0" selected>Week 0 (Sep 13)</option>
+                    <option value="Week1">Week 1 (Sep 15)</option>
+                    <option value="gallery">Video Gallery</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+       
+        
+        <div class="dashboard-layout">
+            <div class="main-content">
+                <div id="Week1" style="display: block;">
+                     <center>
+                        <h1 style="color: white; width: 80%; text-align: center;">Welcome to week 1 🎯</h1>
+                        <h2 style="color: rgb(224, 224, 224); width: 80%; text-align: center;">
+                            Time to finetune your AI idea and start building! ✨</h2>
+                        <h2 style="color: white; width: 80%; text-align: center;">Deadline for Finishing these Tasks<br> <span style="color: #ff6b6b;">Sunday Sep 21, 2025</span> ⏰ </h2>
+                        <h2 style="color: rgb(255, 230, 230); width: 80%; text-align: center; border: 2px solid #ff6b6b; padding: 10px; border-radius: 8px; transition: transform 0.3s ease;">
+                            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" style="text-decoration: none;">
+                                <span style="color: #ff6b6b;">Watch This Week's Lecture on YouTube</span>
+                            </a>
+                        </h2>
+                        <style>
+                            h2:hover {
+                                transform: scale(1.05);
+                                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                            }
+                        </style>
+                    </center>
+
+
+                     <div class="module-card">
+                        <span class="card-number">1</span>
+                        <input type="checkbox" class="task-checkbox" onchange="toggleComplete(this)">
+                        <h3>📺 Watch Last Week's Orientation Slides (if you haven't already)</h3>
+                        <div class="task-content">
+                            <ul class="highlight-text">The orientation slides goes throught the program roadmap, AI Trends, and how you can make the best of this program.
+                                <li>Orientation Slides: <a href="https://docs.google.com/presentation/d/1-IwGW33jaXUD1YQVD4a7GSJrK83EFwxWhYuRMGAF8lU/edit?usp=sharing" target="_blank">Google Slides</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                     <div class="module-card">
+                        <span class="card-number">3</span>
+                        <input type="checkbox" class="task-checkbox" onchange="toggleComplete(this)">
+                        <h3>📅 RSVP to Upcoming Events</h3>
+                        <div class="task-content">
+                            <p class="highlight-text">Register for these events to get support and connect with the community. 👥</p>
+                           
+                            <p>These events are the best way to connect with others in the program, get help with your assignments, and collaborate on your AI projects. 🤝</p>
+                            <h4>📝 Action Items:</h4>
+                            <ol type="I" class="action-list">
+                                <li>💻 <strong>In-Person Coworking Space</strong> - Work together and get support in person.
+                                    <br>📅 Thursday, Sep 18 • 6:30 PM - 8:00 PM PDT
+                                    <br>🔗 <a href="https://luma.com/i513rgi4" target="_blank">RSVP Here</a>
+                                </li>
+                                <li>🧠 <strong>Online Q&A Office Hours</strong> - Another chance to get your questions answered!
+                                    <br>📅 Saturday, Sep 20 • 3:00 PM - 4:00 PM PDT
+                                    <br>🔗 <a href="https://luma.com/9up5ezpt" target="_blank">RSVP Here</a>
+                                </li>
+                                <li>🎲 <strong>Online Lecture Next Monday</strong> - This is a lecture that will help you build your proof of concept.
+                                    <br>📅 Monday, Sep 22 • 6:00 PM - 7:00 PM PDT
+                                    <br>🔗 <a href=https://luma.com/waclegkv target="_blank">RSVP Here</a>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+
+
+
+                    <div class="module-card">
+                        <span class="card-number">2</span>
+                        <input type="checkbox" class="task-checkbox" onchange="toggleComplete(this)">
+                        <h3>🤝 Share/Comment on 3 Project Ideas & If Needed Ask for Teammates</h3>
+                        <div class="task-content"> 
+                            <ol class="action-list">
+                                <li>🚀 <strong>Share your project idea</strong> in the <a href="https://discord.com/channels/1413524932213735567/1415691240434958419" target="_blank">project-ideas Discord channel</a> for feedback (if you haven't already) 💡</li>
+                                <li>💬 <strong>Provide feedback</strong> on 3 other project ideas posted in the channel as it is a great way to expand your horizons.</li>
+                                <li>👥 <strong>Find Teammates (if needed)</strong>. Most people plan to work alone, but you can look for teammates for your project. 
+                                    <ul><li>You can post a short description of your project in this <a href="https://discord.com/channels/1413524932213735567/1417126060621037588" target="_blank">find-teammates Discord channel</a> or message someone directly who has posted there. 🤝</li></ul>
+                                </li>
+                            
+                           
+                        </div>
+                    </div>
+
+                    <div class="module-card">
+                        <span class="card-number">3</span>
+                        <input type="checkbox" class="task-checkbox" onchange="toggleComplete(this)">
+                        <h3>🌐 Create a Landing Page for your Project</h3>
+                        <div class="task-content">
+                            <p class="highlight-text">Use V0 or Lovable to create a quick website prototype for your AI project and share a screenshot. 📸</p>
+                            
+                            <p>V0/Lovable is a great tool for rapidly prototyping website designs. This will help you visualize your project's interface and user experience. 🎨</p>
+                            
+                            <h4>📝 Action Items:</h4>
+                            <ol class="action-list">
+                                <li>🌐 Go to <a href="https://v0.dev" target="_blank">V0.dev</a> or <a href="https://lovable.dev" target="_blank">Lovable.dev</a> and create an account (it's free)</li>
+                                <li>🎨 Create a website prototype for your AI project</li>
+                                <li>📸 Take a screenshot of your website design</li>
+                                <li>📤 Share the screenshot in the <a href="https://discord.com/channels/1413524932213735567/1417143915416653904" target="_blank">🎯｜week-1-idea-outputs Discord channel</a></li>
+                            </ol>
+                            
+                         
+                        </div>
+                    </div>
+
+                     <div class="module-card">
+                        <span class="card-number">4</span>
+                        <input type="checkbox" class="task-checkbox" onchange="toggleComplete(this)">
+                        <h3>🎯 Create Your 5-Minute Idea Slides </h3>
+                        <p style="color: #c5c5c5;font-style: italic;">> slides for best practices in building AI apps 
+                            <a href="https://docs.google.com/presentation/d/1CNbN9QDqZNH2dl47EXhdPD9RzfjThyDeb1rXXUknASQ/edit?usp=sharing" style="color: #c5c5c5;" target="_blank">Google Slides</a></p>
+                        <div class="task-content">
+                            <p class="highlight-text">Create a clear, structured presentation of your AI idea . 📊</p>
+                            <p><strong>❓ Why:</strong> A well-structured presentation helps turn AI ideas into a real, actionable format that others can understand and support.</p>
+                            
+                            <h4>📝 Action Items:</h4>
+                            <ol class="action-list">
+                                <li>📊 We encourage 5 slides following this structure:
+                                    <ol>
+                                        <li><strong>Motivation:</strong> Explain why the idea is cool and how it would benefit the user</li>
+                                        <li><strong>Existing Solutions & Their Limitations:</strong> Explain why has it not been done before</li>
+                                        <li><strong>The Process Flow:</strong> Create a Figure that shows the process flow from input to output for one main use case for how your work apps would work</li>
+                                        <li><strong>Tools/Skills Needed:</strong> Explain the tools/skills that are needed to build it</li>
+                                        <li><strong>Landing Page:</strong> First version of your app's homepage using V0 or Lovable or any other tool</li>
+                                    </ol>
+                                </li>
+                                <li>📝 You can use <a href="https://docs.google.com/presentation/d/1vU6J8TtRNTc9ELtMYQ6CmX4YCjxiAHVMRoK-IKpyZt4/edit?usp=sharing" target="_blank">these slides as a template</a></li>
+                                <li>You can use these slides as inspiration <a href="https://manus.im/share/file/bfc20753-3621-4509-a02c-091f42bc2369" target="_blank">Google Slides</a></li>
+                                <li>📤 Share the link to your slides in the <a href="https://discord.com/channels/1413524932213735567/1417143915416653904" target="_blank">🎯｜week-1-idea-outputs Discord channel</a></li>
+                            </ol>
+                            
+                           
+                        </div>
+                    </div>
+
+                     <div class="module-card">
+                        <span class="card-number">5</span>
+                        <input type="checkbox" class="task-checkbox" onchange="toggleComplete(this)">
+                        <h3>🎤 Register for VAM! Show & Tell AI App Demos</h3>
+                        <div class="task-content">
+                            <p class="highlight-text">RSVP to Present your 5-minute project idea slides in-person! 🎯</p>
+                            
+                            <p>This is a fantastic opportunity to showcase your AI project to the community, get feedback, and connect with other AI enthusiasts and builders. 🚀</p>
+                            
+                            <h4>📝 Action Items:</h4>
+                            <ol class="action-list">
+                                <li>🎫 Register at <a href="https://luma.com/priokzz1" target="_blank">VAM! Show & Tell AI App Demos</a> (October 4)</li>
+                                <li>💰 Coupon: VAS</li>
+                                <li>🎯 Prepare to present your 5-minute project idea slides</li>
+                            </ol>
+                            
+                           
+                        </div>
+                    </div>
+
+                     <div class="module-card">
+                        <span class="card-number">6</span>
+                        <input type="checkbox" class="task-checkbox" onchange="toggleComplete(this)">
+                        <h3>🤖 Build an AI Chatbot for your App</h3>
+                        <div class="task-content">
+                            <p class="highlight-text">Create a chatbot that can answer questions about your app using Gradio and Together.ai's free API access. 🚀</p>
+                            
+                            <p>This hands-on task will help you build a functional AI chatbot that can answer questions about your app - just like many companies have chatbots that help users understand what their app provides. This is a great way to let users know what your app offers! 💬</p>
+                            
+                            <h4>📝 Action Items:</h4>
+                            <ol class="action-list">
+                                <li>🔑 Sign up with <a href="https://together.ai" target="_blank">Together.ai</a> to get a free $1 credit to access different LLMs online and retrieve the API key to use for the LLMs</li>
+                                <li>📓 Go to this <a href="https://colab.research.google.com/drive/1m58G3QmPryaZhffX--1nLSVJ2pRX-wLR?usp=sharing" target="_blank">Google Colab notebook</a>, make a copy, and follow the instructions to create your AI-powered chatbot</li>
+                                <li>📤 Share the link of your Google Colab chatbot in the <a href="https://discord.com/channels/1413524932213735567/1417143915416653904" target="_blank">🎯｜week-1-idea-outputs Discord channel</a></li>
+                            </ol>
+                            
+                           
+                        </div>
+                    </div>
+
+                          <div class="module-card">
+                         <span class="card-number">7</span>
+                         <input type="checkbox" class="task-checkbox" onchange="toggleComplete(this)">
+                         <h3>🔗 Share on LinkedIn (Optional)</h3>
+                        <div class="task-content">
+                          
+                            <ul>
+                                <li>Announce your AI App building journey on LinkedIn to gain community support and protect your idea! 📣</li>
+                                <ul>
+                                    <li>See Example: <a href="https://www.linkedin.com/posts/thomas-h-profile_kicking-off-another-build-your-ai-idea-in-activity-7301773456717553665-B5Sk?utm_source=share&utm_medium=member_desktop&rcm=ACoAABT5YD8Bj2Qoy9JI2tWChPvKes8iJ60t3Ps" target="_blank">LinkedIn Post</a></li>
+                                </ul>
+                                <li>Benefits of posting about your progress:
+                                    <ul>
+                                        <li>Increased visibility</li>
+                                        <li>Networking opportunities</li>
+                                        <li>Community support 🌐</li>
+                                    </ul>
+                                </li>
+                                <li>Post the link to the LinkedIn post in the <a href="https://discord.com/channels/1413524932213735567/1416798049614692484" target="_blank">social-media Discord channel</a> so we could repost it and make you famous. 🌟</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                          <div class="module-card">
+                         <span class="card-number">8</span>
+                         <input type="checkbox" class="task-checkbox" onchange="toggleComplete(this)">
+                         <h3>✅ Submit Week 1 Completion Form</h3>
+                        <div class="task-content">
+                            <p class="highlight-text">Submit this form to indicate you've completed this week's tasks. 📝</p>
+                            
+                            <p>Once you've completed all the tasks for week 1, please fill out the completion form to let us know about your progress and project development. 🏁</p>
+                            
+                            <h4>📝 Action Items:</h4>
+                            <ol class="action-list">
+                                <li>🗓️ <strong>Deadline:</strong> Sunday, Sep 21, 2025</li>
+                                <li>📝 <strong>Submit the form:</strong> <a href="https://forms.gle/Mv5hfamJhD4VeN9r6" target="_blank">week 1 Completion Form</a></li>
+                            </ol>
+                            
+                           
+                        </div>
+                    </div>
+
+                     <div class="module-card optional-task">
+                        <span class="card-number">Optional</span>
+                        <input type="checkbox" class="task-checkbox" onchange="toggleComplete(this)">
+                        <h3>🌐 (Optional) Create a Website Using Flask for Your App</h3>
+                        <div class="task-content">
+                            <p class="highlight-text" style="background-color: #2a4d3a; border-left: 4px solid #4caf50;">⚠️ This is an OPTIONAL task - you do not have to complete this week! This will be covered in Week 3.</p>
+                            
+                            <p>Use Cursor or VSCode to create a website using Flask for your app. This will be the starting point for your full working project. 🚀</p>
+                            
+                            <h4>📝 Action Items:</h4>
+                            <ol class="action-list">
+                                <li>💻 Use Cursor or VSCode to set up a Flask project for your app</li>
+                                <li>🎓 See this week's lecture for guidance on how this can be done</li>
+                                <li>📁 Create a private GitHub repository for your Flask project</li>
+                                <li>👥 Add <strong>IssamLaradji</strong> as a collaborator to your GitHub repository so progress can be reviewed</li>
+                                <li>💬 Share your GitHub repository link with your assigned Support Team for guidance and support</li>
+                                <li>🔧 This will serve as the foundation for your full working project</li>
+                            </ol>
+                            
+                            <p style="color: #4caf50; font-weight: bold;">📅 Note: This task will be formally assigned in Week 3 - feel free to get a head start if you're interested!</p>
+                        </div>
+                    </div>
+
+                    
+                
+                  
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="scripts.js"></script>
+</body>
+</html>
