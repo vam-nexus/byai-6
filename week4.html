@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BYAI-6 - Build your AI Idea in Six Weeks</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="banner">
+        <div class="banner-content">
+            <div class="logo-container">
+                <a href="/" class="logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M12 2L1 12h3v9h6v-6h4v6h6v-9h3L12 2zm0 2.5L18.5 11H17v9h-2v-6H9v6H7v-9H5.5L12 4.5z"/>
+                    </svg>
+                    Build Your AI in Six Weeks (BYAI-6)
+                </a>
+            </div>
+            <div id="countdown-timer" style="color: white; font-weight: bold; text-align: center; margin: 0 auto; background: rgba(0,0,0,0.3); padding: 8px 15px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.2);">
+                <div class="countdown-title">
+                    <span id="days-remaining" class="countdown-value">0</span> days until Demo Day 
+                    (<span id="digital-clock">00:00:00</span>)
+                </div>
+            </div>
+            <div class="nav-dropdown">
+                <select id="section-selector" onchange="showWeek(this.value)">
+                    <option value="Week0">Week 0 (Sep 13)</option>
+                    <option value="Week1">Week 1 (Sep 15)</option>
+                    <option value="Week2">Week 2 (Sep 22)</option>
+                    <option value="Week3">Week 3 (Sep 29)</option>
+                    <option value="Week4" selected>Week 4 (Oct 6)</option>
+                    <option value="gallery">Video Gallery</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+       
+        
+        <div class="dashboard-layout">
+            <div class="main-content">
+                <div id="Week4" style="display: block;">
+                     <center>
+                        <h1 style="color: white; width: 80%; text-align: center;">Welcome to Week 4 🎯</h1>
+                        <h2 style="color: rgb(224, 224, 224); width: 80%; text-align: center;">
+                            Incorporate RAG and Data Retrieval to your App! ✨</h2>
+                        <h2 style="color: white; width: 80%; text-align: center;">Deadline for Finishing these Tasks<br> <span style="color: #ff6b6b;">Sunday Oct 12th, 2025</span> ⏰ </h2>
+                        <h2 style="color: rgb(255, 230, 230); width: 80%; text-align: center; border: 2px solid #c2f4f6; padding: 10px; border-radius: 8px; transition: transform 0.3s ease;">
+                            <a href="https://youtu.be/TBD" target="_blank" style="text-decoration: none;">
+                                <span style="color: #c2f4f6;">Watch This Week's Lecture on YouTube</span>
+                            </a>
+                        </h2>
+                        <style>
+                            h2:hover {
+                                transform: scale(1.05);
+                                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                            }
+                        </style>
+                    </center>
+                   <div class="module-card">
+                        <span class="card-number">1</span>
+                        <input type="checkbox" class="task-checkbox" onchange="toggleComplete(this)">
+                        <h3>🔗 Share Your App Demo on LinkedIn</h3>
+                        <div class="task-content">
+                            <p class="highlight-text">Now that you have something working, create a small 5 second demo and share it - it will get lots of good attention! 🚀</p>
+                            
+                            <h4>📝 Action Items:</h4>
+                            <ol class="action-list">
+                                <li><strong>Create a quick demo video</strong> (5-10 seconds) showing your app in action 🎥</li>
+                                <li><strong>Write a LinkedIn post</strong> announcing your AI app progress and share the demo 📣</li>
+                                <li><strong>Share the LinkedIn post link</strong> in the <a href="https://discord.com/channels/1413524932213735567/1416798049614692484" target="_blank">social-media Discord channel</a> so we can repost it and make you famous! 🌟</li>
+                            </ol>
+                            
+                        </div>
+                    </div>
+
+
+                
+
+                     <div class="module-card">
+                        <span class="card-number">2</span>
+                        <input type="checkbox" class="task-checkbox" onchange="toggleComplete(this)">
+                        <h3>📅 RSVP to Upcoming Events</h3>
+                        <div class="task-content">
+                            <p class="highlight-text">Register for these events to get support and connect with the community. 👥</p>
+                           
+                            <p>These events are the best way to connect with others in the program, get help with your assignments, and collaborate on your AI projects. 🤝</p>
+                            <h4>📝 Action Items:</h4>
+                            <ol type="I" class="action-list">
+                                <li>💻 <strong>In-Person Coworking Space</strong> - Work together and get support in person.
+                                    <br>📅 Thursday, Oct 9 • 6:30 PM - 8:00 PM PDT
+                                    <br>🔗 <a href="https://luma.com/gyt57rkz" target="_blank">RSVP Here</a>
+                                </li>
+                                <li>🎲 <strong>Online Lecture Next Monday</strong> - This lecture will cover final preparations and presentation tips.
+                                    <br>📅 Monday, Oct 13 • 6:00 PM - 7:00 PM PDT
+                                    <br>🔗 <a href="https://luma.com/c4eaf77z" target="_blank">RSVP Here</a>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="module-card">
+                        <span class="card-number">3</span>
+                        <input type="checkbox" class="task-checkbox" onchange="toggleComplete(this)">
+                        <h3>📅 Book a 1-on-1 Meeting</h3>
+                        <div class="task-content">
+                            
+                            <p>One-on-one meetings are the best way to get targeted feedback, overcome specific challenges, and accelerate your progress. Our facilitators are here to support you! 💡</p>
+                            
+                            <h4>📝 Choose Your Facilitator:</h4>
+                            <ol class="action-list">
+                                <li>👨‍💻 <strong>Farias</strong> - <a href="https://calendly.com/farias-murilo/30min" target="_blank">Book with Farias</a></li>
+                                <li>👩‍💻 <strong>Helena</strong> - <a href="https://calendly.com/helena-v-88/bai-6-with-helena" target="_blank">Book with Helena</a></li>
+                                <li>👨‍💻 <strong>Pawel</strong> - <a href="https://calendly.com/pawel-z/byai6" target="_blank">Book with Pawel</a></li>
+                                <li>👨‍💻 <strong>Issam</strong> - <a href="https://calendly.com/issam-laradji-uhp1/30min?month=2025-09" target="_blank">Book with Issam</a></li>
+                            </ol>
+                            
+                        </div>
+                    </div>
+
+                    <div class="module-card">
+                        <span class="card-number">4</span>
+                        <input type="checkbox" class="task-checkbox" onchange="toggleComplete(this)">
+                        <h3>🧠 Add RAG to your App</h3>
+                        <div class="task-content">
+                            
+                            <p>RAG allows your AI to access and cite specific documents or knowledge bases, making responses more accurate and trustworthy. 📚</p>
+                            <p>You can use this RAG code for inspiration: <a href="https://github.com/vam-nexus/hospital_patient_management/rag" target="_blank">Github Repo</a></p>
+                            
+                            <h4>📝 Choose Your RAG Implementation (Watch the Youtube Video for support if needed):</h4>
+                            
+                            <ol class="action-list">
+                                <li>🤖 <strong>Option 1: Enhance Your Chatbot with RAG:</strong>
+                                    <br>• Make your chatbot access documentation (README files, websites)
+                                    <br>• Allow it to answer questions based on specific knowledge sources
+                                    <br>• Include citations showing where information came from
+                                </li>
+                                <li>⚙️ <strong>Option 2: Add RAG to a Specific Function:</strong>
+                                    <br>• Use RAG for domain-specific tasks (e.g., legal documents, technical manuals)
+                                    <br>• Load .txt files or documents about your topic/domain
+                                    <br>• Have the AI model use this knowledge to provide specialized answers
+                                </li>
+                                <li>📊 <strong>Implementation Requirements:</strong>
+                                    <br>• Output must include citations of information sources
+                                    <br>• Show users where the AI got its information from
+                                    <br>• Test with different types of queries to ensure accuracy
+                                </li>
+                                <li>📤 <strong>Share your RAG-powered output</strong> (with citations!) in the <a href="https://discord.com/channels/1413524932213735567/1424904345597640824" target="_blank">🚀｜week-4-outputs Discord channel</a></li>
+                            </ol>
+                            
+                            <div style="background-color: rgba(194, 244, 246, 0.1); border: 1px solid #c2f4f6; padding: 15px; border-radius: 8px; margin-top: 15px;">
+                                <h4 style="color: #c2f4f6; margin-top: 0;">🎯 RAG Implementation Ideas:</h4>
+                                <ul>
+                                    <li>Customer support bot that references product documentation</li>
+                                    <li>Research assistant that cites academic papers or articles</li>
+                                    <li>Code helper that references GitHub repos or technical docs</li>
+                                    <li>Domain expert (legal, medical, financial) with specialized knowledge</li>
+                                </ul>
+                            </div>
+            
+                         </div>
+                     </div>
+
+                     
+
+                          <div class="module-card">
+                         <span class="card-number">5</span>
+                         <input type="checkbox" class="task-checkbox" onchange="toggleComplete(this)">
+                         <h3>✅ Submit Week 4 Completion Form</h3>
+                        <div class="task-content">
+                            <p class="highlight-text">Submit this form to indicate you've completed this week's tasks. 📝</p>
+                            
+                            <p>Once you've completed all the tasks for week 4, please fill out the completion form to let us know about your progress and final preparations. 🏁</p>
+                            
+                            <h4>📝 Action Items:</h4>
+                            <ol class="action-list">
+                                <li>🗓️ <strong>Deadline:</strong> Sunday, Oct 12, 2025</li>
+                                <li>📝 <strong>Submit the form:</strong> <a href="https://forms.gle/mAMYLrtw5bZJQsDF7" target="_blank">Week 4 Completion Form</a></li>
+                            </ol>
+                            
+                           
+                        </div>
+                    </div>
+
+                   
+                    
+                
+                  
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="scripts.js"></script>
+</body>
+</html>
