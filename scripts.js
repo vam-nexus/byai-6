@@ -6,6 +6,12 @@
             }
             
             // Only redirect if we're not already on the target page
+            if (weekId === 'projects' && !window.location.pathname.includes('projects.html')) {
+                window.location.href = 'projects.html';
+                return;
+            }
+            
+            // Only redirect if we're not already on the target page
             if (weekId === 'Week0' && !window.location.pathname.includes('week0.html')) {
                 window.location.href = 'week0.html';
                 return;
@@ -53,6 +59,8 @@
             // Set appropriate default based on current page
             if (window.location.pathname.includes('gallery.html')) {
                 defaultSection = 'gallery';
+            } else if (window.location.pathname.includes('projects.html')) {
+                defaultSection = 'projects';
             } else if (window.location.pathname.includes('week0.html')) {
                 defaultSection = 'Week0';
             } else if (window.location.pathname.includes('week1.html')) {

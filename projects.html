@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The 4th BYAI-6 - Build your AI Idea in Six Weeks</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="banner">
+        <div class="banner-content">
+            <div class="logo-container">
+                <a href="/" class="logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M12 2L1 12h3v9h6v-6h4v6h6v-9h3L12 2zm0 2.5L18.5 11H17v9h-2v-6H9v6H7v-9H5.5L12 4.5z"/>
+                    </svg>
+                    BYAI-6 The 4th
+                </a>
+            </div>
+            <div id="countdown-timer" style="color: white; font-weight: bold; text-align: center; margin: 0 auto; background: rgba(0,0,0,0.3); padding: 8px 15px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.2);">
+                <div class="countdown-title">
+                    <span id="days-remaining" class="countdown-value">0</span> days until Demo Day 
+                    (<span id="digital-clock">00:00:00</span>)
+                </div>
+            </div>
+            <div class="nav-dropdown">
+                <select id="section-selector" onchange="showWeek(this.value)">
+                    <option value="Week0">Week 0 (Sep 13)</option>
+                    <option value="Week1">Week 1 (Sep 15)</option>
+                    <option value="Week2">Week 2 (Sep 22)</option>
+                    <option value="Week3">Week 3 (Sep 29)</option>
+                    <option value="Week4">Week 4 (Oct 6)</option>
+                    <option value="gallery">Video Gallery</option>
+                    <option value="projects" selected>Projects</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+       
+        
+        <div class="dashboard-layout">
+            <div class="main-content">
+                
+                <div id="projects" style="display: block;">
+                    <center>
+                        <h2 style="color: white; width: 80%; text-align: left;">Project Landing Pages</h2>
+                        <h4 style="color: white; width: 80%; text-align: left;">
+                            Explore the landing pages created by BYAI-6 participants.</h4>
+                    </center>
+                    
+                    <div class="project-gallery">
+                        <div class="project-item">
+                            <h4>1) App by Arisa Idenawa</h4>
+                            <div class="project-image">
+                                <img src="downloaded_images/project_landing_pages/mobilelandingpage - Arisa Idenawa.png" alt="Project landing page">
+                            </div>
+                        </div>
+                        
+                        <hr class="project-separator">
+                        
+                        <div class="project-item">
+                            <h4>2) App by Daoming Liu</h4>
+                            <div class="project-image">
+                                <img src="downloaded_images/project_landing_pages/Screenshot 2025-09-21 at 18.05.05 - Daoming Liu.png" alt="Project landing page">
+                            </div>
+                        </div>
+                        
+                        <hr class="project-separator">
+                        
+                        <div class="project-item">
+                            <h4>3) App by Erick</h4>
+                            <div class="project-image">
+                                <img src="downloaded_images/project_landing_pages/Screenshot 2025-09-21 181949 - Erick.png" alt="Project landing page">
+                            </div>
+                        </div>
+                        
+                        <hr class="project-separator">
+                        
+                        <div class="project-item">
+                            <h4>4) App by Joanne</h4>
+                            <div class="project-image">
+                                <img src="downloaded_images/project_landing_pages/Captureweb page - Joanne.PNG" alt="Project landing page">
+                            </div>
+                        </div>
+                        
+                        <hr class="project-separator">
+                        
+                        <div class="project-item">
+                            <h4>5) App by Juan Tampubolon</h4>
+                            <div class="project-image">
+                                <img src="downloaded_images/project_landing_pages/preview--diff-genie.lovable.app_ - Juan Tampubolon.png" alt="Project landing page">
+                            </div>
+                        </div>
+                        
+                        <hr class="project-separator">
+                        
+                        <div class="project-item">
+                            <h4>6) App by Julia Schmid</h4>
+                            <div class="project-image">
+                                <img src="downloaded_images/project_landing_pages/lovable_landingpage - Julia Schmid.png" alt="Project landing page">
+                            </div>
+                        </div>
+                        
+                        <hr class="project-separator">
+                        
+                        <div class="project-item">
+                            <h4>7) App by Katie Karam</h4>
+                            <div class="project-image">
+                                <img src="downloaded_images/project_landing_pages/landing_page - Katie Karam.png" alt="Project landing page">
+                            </div>
+                        </div>
+                        
+                        <hr class="project-separator">
+                        
+                        <div class="project-item">
+                            <h4>8) App by Kerem</h4>
+                            <div class="project-image">
+                                <img src="downloaded_images/project_landing_pages/Kerem Gurbey - XAI Landing Page - Kerem.png" alt="Project landing page">
+                            </div>
+                        </div>
+                        
+                        <hr class="project-separator">
+                        
+                        <div class="project-item">
+                            <h4>9) App by Manon Jacquin</h4>
+                            <div class="project-image">
+                                <img src="downloaded_images/project_landing_pages/Screenshot 2025-09-22 at 16.14.48 - Manon Jacquin.png" alt="Project landing page">
+                            </div>
+                        </div>
+                        
+                        <hr class="project-separator">
+                        
+                        <div class="project-item">
+                            <h4>10) App by Mats Lundstrom</h4>
+                            <div class="project-image">
+                                <img src="downloaded_images/project_landing_pages/Screenshot 2025-09-21 213821 - Mats Lundstrom.png" alt="Project landing page">
+                            </div>
+                        </div>
+                        
+                        <hr class="project-separator">
+                        
+                        <div class="project-item">
+                            <h4>11) App by Parisa Zare</h4>
+                            <div class="project-image">
+                                <img src="downloaded_images/project_landing_pages/SC 1 - Parisa Zare.png" alt="Project landing page">
+                            </div>
+                        </div>
+                        
+                        <hr class="project-separator">
+                        
+                        <div class="project-item">
+                            <h4>12) App by Rachel Li</h4>
+                            <div class="project-image">
+                                <img src="downloaded_images/project_landing_pages/Landing Page - Rachel Li.png" alt="Project landing page">
+                            </div>
+                        </div>
+                        
+                        <hr class="project-separator">
+                        
+                        <div class="project-item">
+                            <h4>13) App by Reshama Damle</h4>
+                            <div class="project-image">
+                                <img src="downloaded_images/project_landing_pages/Screenshot of ThreadStory - Reshama Damle.jpg" alt="Project landing page">
+                            </div>
+                        </div>
+                        
+                        <hr class="project-separator">
+                        
+                        <div class="project-item">
+                            <h4>14) App by Sin Ko</h4>
+                            <div class="project-image">
+                                <img src="downloaded_images/project_landing_pages/Landing Page - v1 - Sin Ko.png" alt="Project landing page">
+                            </div>
+                        </div>
+                        
+                        <hr class="project-separator">
+                        
+                        <div class="project-item">
+                            <h4>15) App by Thomas Ho</h4>
+                            <div class="project-image">
+                                <img src="downloaded_images/project_landing_pages/ENZO_landing_page_example - Thomas Ho.png" alt="Project landing page">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+<script src="scripts.js"></script>
+</body>
+</html>

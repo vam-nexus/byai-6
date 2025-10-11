@@ -1,0 +1,88 @@
+.scripts
+gst.vscode/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+data_generation/configs/
+!data_generation/configs/enterprise_deep_research_typology.csv
+results/
+output/
+.outputs
+.llm_responses
+.gradio
+.generated_tasks
+# C extensions
+.tests_old
+*.so
+.tmp
+.flake8 
+.scripts
+.env.template
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+.gradio
+# Virtual environments
+venv/
+env/
+.env/
+.venv/
+ENV/
+
+# IDE specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Testing
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Logs
+*.log
+
+# Local development settings
+.env
+.env.local
+
+# Database files
+*.db
+*.sqlite3
+.DS_Store
+
+
+# dropbox
+dropbox/
+
+# web/static
+web/static/
+
+# various experiments folders
+experiments/results
+experiments/outputs
+experiments/research_workspace
+experiments/vector_stores
+experiments/analysis_results
+
+# llm responses
+.llm_responses/
+
+# temporary_generation_files
+.temporary_generation_files/
+
+# Agent work folders
+research_workspace/
+vector_stores/
+temp_score_eval*/
+outputs/
+
+experiments/web_agents/agentlab_results
+others/
