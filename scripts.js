@@ -32,6 +32,10 @@
                 window.location.href = 'week4.html';
                 return;
             }
+            if (weekId === 'Week5' && !window.location.pathname.includes('week5.html')) {
+                window.location.href = 'week5.html';
+                return;
+            }
             // Hide all weeks
             document.querySelectorAll('.main-content > div').forEach(div => {
                 div.style.display = 'none';
@@ -74,6 +78,9 @@
             }
             else if (window.location.pathname.includes('week4.html')) {
                 defaultSection = 'Week4';
+            }
+            else if (window.location.pathname.includes('week5.html')) {
+                defaultSection = 'Week5';
             }
             
             const hash = window.location.hash.slice(1) || defaultSection;

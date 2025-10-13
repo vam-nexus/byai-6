@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The 4th BYAI-6 - Build your AI Idea in Six Weeks</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="banner">
+        <div class="banner-content">
+            <div class="logo-container">
+                <a href="/" class="logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M12 2L1 12h3v9h6v-6h4v6h6v-9h3L12 2zm0 2.5L18.5 11H17v9h-2v-6H9v6H7v-9H5.5L12 4.5z"/>
+                    </svg>
+                    BYAI-6 The 4th
+                </a>
+            </div>
+            <div id="countdown-timer" style="color: white; font-weight: bold; text-align: center; margin: 0 auto; background: rgba(0,0,0,0.3); padding: 8px 15px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.2);">
+                <div class="countdown-title">
+                    <span id="days-remaining" class="countdown-value">0</span> days until Demo Day 
+                    (<span id="digital-clock">00:00:00</span>)
+                </div>
+            </div>
+            <div class="nav-dropdown">
+                <select id="section-selector" onchange="showWeek(this.value)">
+                    <option value="Week0">Week 0 (Sep 13)</option>
+                    <option value="Week1">Week 1 (Sep 15)</option>
+                    <option value="Week2">Week 2 (Sep 22)</option>
+                    <option value="Week3">Week 3 (Sep 29)</option>
+                    <option value="Week4">Week 4 (Oct 6)</option>
+                    <option value="Week5" selected>Week 5 (Oct 13)</option>
+                    <option value="gallery">Video Gallery</option>
+                    <option value="projects">Projects</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+       
+        
+        <div class="dashboard-layout">
+            <div class="main-content">
+                <div id="Week5" style="display: block;">
+                     <center>
+                        <h1 style="color: white; width: 80%; text-align: center;">Welcome to Week 5 🎯</h1>
+                        <h2 style="color: rgb(224, 224, 224); width: 80%; text-align: center;">
+                            Test Your App with Unit Tests and LLM Testing! ✨</h2>
+                        <h2 style="color: white; width: 80%; text-align: center;">Deadline for Finishing these Tasks<br> <span style="color: #ff6b6b;">Sunday Oct 19th, 2025</span> ⏰ </h2>
+                        <h2 style="color: rgb(255, 230, 230); width: 80%; text-align: center; border: 2px solid #c2f4f6; padding: 10px; border-radius: 8px; transition: transform 0.3s ease;">
+                            <a href="#" target="_blank" style="text-decoration: none;">
+                                <span style="color: #c2f4f6;">Watch This Week's Lecture on YouTube (Coming Soon)</span>
+                            </a>
+                        </h2>
+                        <style>
+                            h2:hover {
+                                transform: scale(1.05);
+                                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                            }
+                        </style>
+                    </center>
+
+                   <div class="module-card">
+                        <span class="card-number">1</span>
+                        <input type="checkbox" class="task-checkbox" onchange="toggleComplete(this)">
+                        <h3>📅 RSVP to Upcoming Events</h3>
+                        <div class="task-content">
+                            <p class="highlight-text">Register for these events to get support and connect with the community. 👥</p>
+                           
+                            <p>These events are the best way to connect with others in the program, get help with your assignments, and collaborate on your AI projects. 🤝</p>
+                            <h4>📝 Action Items:</h4>
+                            <ol type="I" class="action-list">
+                                <li>🎲 <strong>Online Lecture Next Monday</strong> - From Prototype to Product: Final preparations and presentation tips.
+                                    <br>📅 Monday, Oct 20 • 6:00 PM - 7:00 PM PDT
+                                    <br>🔗 <a href="https://luma.com/fl3f87uz" target="_blank">RSVP Here</a>
+                                </li>
+                                <li>💻 <strong>In-Person Co-Working Friday</strong> - Final sprint session to polish your app before demo day.
+                                    <br>📅 Friday, Oct 17 • 6:30 PM - 8:00 PM PDT
+                                    <br>🔗 <a href="https://luma.com/26gkchri" target="_blank">RSVP Here</a>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="module-card">
+                        <span class="card-number">2</span>
+                        <input type="checkbox" class="task-checkbox" onchange="toggleComplete(this)">
+                        <h3>📅 Book a 1-on-1 Meeting</h3>
+                        <div class="task-content">
+                            <p class="highlight-text">Schedule  1-on-1 sessions with our facilitators for support! 🤝</p>
+                            
+                         
+                            
+                            <h4>📝 Choose Your Facilitator:</h4>
+                            <ol class="action-list">
+                                <li>👨‍💻 <strong>Farias</strong> - <a href="https://calendly.com/farias-murilo/30min" target="_blank">Book with Farias</a></li>
+                                <li>👩‍💻 <strong>Helena</strong> - <a href="https://calendly.com/helena-v-88/bai-6-with-helena" target="_blank">Book with Helena</a></li>
+                                <li>👨‍💻 <strong>Pawel</strong> - <a href="https://calendly.com/pawel-z/byai6" target="_blank">Book with Pawel</a></li>
+                                <li>👨‍💻 <strong>Issam</strong> - <a href="https://calendly.com/issam-laradji-uhp1/30min?month=2025-09" target="_blank">Book with Issam</a></li>
+                            </ol>
+                            
+                        </div>
+                    </div>
+
+                    <div class="module-card">
+                        <span class="card-number">3</span>
+                        <input type="checkbox" class="task-checkbox" onchange="toggleComplete(this)">
+                        <h3>🧪 Write Unit Tests for Your App</h3>
+                        <div class="task-content">
+                            <p class="highlight-text">Create unit tests to ensure your app functions correctly and catch bugs early 🔬</p>
+                            
+                            <p>Write 3 unit tests under <code>tests/test_*.py</code>. The example structure here as inspiration <a href="https://github.com/IssamLaradji/PaperLM/blob/main/tests/test_basics.py" target="_blank">PaperLM's test_basics.py</a></p>
+                            
+                            <h4>📝 Action Items:</h4>
+                            <ol class="action-list">
+                                <li>📁 <strong>Set up testing structure:</strong> Create <code>tests/</code> directory and install pytest (<code>pip install pytest</code>)</li>
+                                <li>🔧 <strong>Write 3 core functionality tests:</strong> Here are some exmaples:
+                                    <ul style="margin-top: 8px;">
+                                        <li>PDF files are correctly uploaded and processed</li>
+                                        <li>User registration works with valid credentials</li>
+                                        <li>Correct password leads to successful login</li>
+                                        <li>Logged-in users have the right documents saved</li>
+                                    </ul>
+                                </li>
+                                <li>📤 <strong>Share your tests:</strong> Push your unit tests file to GitHub and share the GitHub URL link in <a href="https://discord.com/channels/1413524932213735567/1427375560501362698" target="_blank">this Discord thread</a></li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="module-card">
+                        <span class="card-number">4</span>
+                        <input type="checkbox" class="task-checkbox" onchange="toggleComplete(this)">
+                        <h3>🤖 Test Your Large Language Models</h3>
+                        <div class="task-content">
+                            <p class="highlight-text">Test your AI/LLM components to ensure they behave correctly and produce reliable outputs 🎯</p>
+                            
+                            <p>Write 3 LLM tests under <code>tests/test_*.py</code>. Use this structure as inspiration <a href="https://github.com/IssamLaradji/PaperLM/blob/main/tests/test_prompts.py" target="_blank">PaperLM's test_prompts.py</a></p>
+                            
+                            <h4>📝 Action Items:</h4>
+                            <ol class="action-list">
+                                <li>📁 <strong>Set up LLM testing:</strong> Create <code>tests/</code> directory and create <code>test_llm.py</code> or <code>test_prompts.py</code></li>
+                                <li>🔧 <strong>Write 3 LLM behavior tests:</strong> Here are some examples:
+                                    <ul style="margin-top: 8px;">
+                                        <li>Check if the LLM output matches expected content/format</li>
+                                        <li>Check if the output has the right structure (JSON, specific fields, etc.)</li>
+                                        <li>Check if the input prompt is processed correctly</li>
+                                        <li>Test prompt variations produce consistent results</li>
+                                    </ul>
+                                </li>
+                                <li>📤 <strong>Share your tests:</strong> Push your LLM tests file to GitHub and share the GitHub URL link in <a href="https://discord.com/channels/1413524932213735567/1427375560501362698" target="_blank">this Discord thread</a></li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="module-card">
+                        <span class="card-number">5</span>
+                        <input type="checkbox" class="task-checkbox" onchange="toggleComplete(this)">
+                        <h3>👍👎 Collect User Feedback on App Outputs</h3>
+                        <div class="task-content">
+                            <p class="highlight-text">Add thumbs up/down feedback system and collect quality examples of your app's performance 📊</p>
+                            
+                            <h4>📝 Action Items:</h4>
+                            <ol class="action-list">
+                                <li>👍👎 <strong>Add feedback system:</strong> Implement thumbs up/thumbs down buttons for user outputs in your app interface</li>
+                                <li>📁 <strong>Create outputs folder:</strong> Set up an <code>outputs/</code> directory to store feedback examples</li>
+                                <li>✅ <strong>Collect 2 thumbs up outputs:</strong> Save 2 high-quality outputs that users rated positively (include input, output, and timestamp)</li>
+                                <li>❌ <strong>Collect 2 thumbs down outputs:</strong> Save 2 problematic outputs that users rated negatively (include input, output, and reason for negative feedback)</li>
+                                <li>📤 <strong>Share your feedback collection:</strong> Push your outputs folder to GitHub and share the GitHub URL link in <a href="https://discord.com/channels/1413524932213735567/1427375560501362698" target="_blank">this Discord thread</a></li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    
+
+                          <div class="module-card">
+                         <span class="card-number">7</span>
+                         <input type="checkbox" class="task-checkbox" onchange="toggleComplete(this)">
+                         <h3>✅ Submit Week 5 Completion Form</h3>
+                        <div class="task-content">
+                            <p class="highlight-text">Submit this form to indicate you've completed this week's tasks and are ready for Demo Day! 📝</p>
+                            
+                            <p>Once you've completed all the tasks for week 5, please fill out the completion form to confirm your final preparations and demo readiness. 🏁</p>
+                            
+                            <h4>📝 Action Items:</h4>
+                            <ol class="action-list">
+                                <li>🗓️ <strong>Deadline:</strong> Sunday, Oct 19, 2025</li>
+                                <li>📝 <strong>Submit the form:</strong> <a href="https://forms.gle/fBFfnvdpNJcEkiwJA" target="_blank">Week 5 Completion Form (Coming Soon)</a></li>
+                            </ol>
+                            
+                           
+                        </div>
+                    </div>
+
+                   
+                    
+                
+                  
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="scripts.js"></script>
+</body>
+</html>
