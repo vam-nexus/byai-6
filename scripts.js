@@ -36,6 +36,10 @@
                 window.location.href = 'week5.html';
                 return;
             }
+            if (weekId === 'Week6' && !window.location.pathname.includes('week6.html')) {
+                window.location.href = 'week6.html';
+                return;
+            }
             // Hide all weeks
             document.querySelectorAll('.main-content > div').forEach(div => {
                 div.style.display = 'none';
@@ -58,7 +62,7 @@
 
         // Handle URL-based navigation
         function handleUrlSection() {
-            let defaultSection = 'Week4'; // default for most pages
+            let defaultSection = 'Week6'; // default for most pages
             
             // Set appropriate default based on current page
             if (window.location.pathname.includes('gallery.html')) {
@@ -81,6 +85,9 @@
             }
             else if (window.location.pathname.includes('week5.html')) {
                 defaultSection = 'Week5';
+            }
+            else if (window.location.pathname.includes('week6.html')) {
+                defaultSection = 'Week6';
             }
             
             const hash = window.location.hash.slice(1) || defaultSection;

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The 4th BYAI-6 - Build your AI Idea in Six Weeks</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="banner">
+        <div class="banner-content">
+            <div class="logo-container">
+                <a href="/" class="logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M12 2L1 12h3v9h6v-6h4v6h6v-9h3L12 2zm0 2.5L18.5 11H17v9h-2v-6H9v6H7v-9H5.5L12 4.5z"/>
+                    </svg>
+                    BYAI-6 The 4th
+                </a>
+            </div>
+            <div id="countdown-timer" style="color: white; font-weight: bold; text-align: center; margin: 0 auto; background: rgba(0,0,0,0.3); padding: 8px 15px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.2);">
+                <div class="countdown-title">
+                    <span id="days-remaining" class="countdown-value">0</span> days until Demo Day 
+                    (<span id="digital-clock">00:00:00</span>)
+                </div>
+            </div>
+            <div class="nav-dropdown">
+                <select id="section-selector" onchange="showWeek(this.value)">
+                    <option value="Week0">Week 0 (Sep 13)</option>
+                    <option value="Week1">Week 1 (Sep 15)</option>
+                    <option value="Week2">Week 2 (Sep 22)</option>
+                    <option value="Week3">Week 3 (Sep 29)</option>
+                    <option value="Week4">Week 4 (Oct 6)</option>
+                    <option value="Week5">Week 5 (Oct 13)</option>
+                    <option value="Week6" selected>Week 6 (Nov 2)</option>
+                    <option value="gallery">Video Gallery</option>
+                    <option value="projects">Projects</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+       
+        
+        <div class="dashboard-layout">
+            <div class="main-content">
+                <div id="Week6" style="display: block;">
+                     <center>
+                        <h1 style="color: white; width: 80%; text-align: center;">Welcome to the final Week 6🎯</h1>
+                        <h2 style="color: rgb(224, 224, 224); width: 80%; text-align: center;">
+                            Prepare for Demo Day! ✨</h2>
+                        <div style="border: 2px dashed #c2f4f6; padding: 10px; margin: 10px;">
+                            <h2 style="color: white; width: 80%; text-align: center;">Please submit the <a href="https://forms.gle/UDtEFr9tE8pwnNyx9" target="_blank" style="text-decoration: none; color: #c2f4f6; text-decoration: underline;"><strong>Completion Form</strong></a> by<br> 
+                                <span style="color: #ff6b6b;">Sunday November 2nd, 2025</span> to receive your Certificate of Completion!⏰
+                            </h2>
+                        </div>
+                       
+                        <style>
+                            h2:hover {
+                                transform: scale(1.05);
+                                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                            }
+                        </style>
+                    </center>
+
+                   <div class="module-card">
+                        <span class="card-number">1</span>
+                        <input type="checkbox" class="task-checkbox" onchange="toggleComplete(this)">
+                        <h3>📅 RSVP to the Demo Day</h3>
+                        <div class="task-content">
+                            <p class="highlight-text">Register for the Demo Day to present your app to the community. 👥</p>
+                            <h4>📝 Action Items:</h4>
+                            <ol type="I" class="action-list">
+                                <li>🎲 <strong>Nov 1st Demo Day Registration
+                                </strong> - <a href="https://luma.com/bgz68toi" target="_blank">https://luma.com/bgz68toi</a>. 🤝</li>
+                                <li><strong> See Line up: 
+                                    <a href="https://docs.google.com/spreadsheets/d/1H06jkTGXyoTK0fb6VlURBbVxlcLql4f_E2OYT7m1dzo/edit?usp=sharing" target="_blank">https://docs.google.com/spreadsheets/d/1H06jkTGXyoTK0fb6VlURBbVxlcLql4f_E2OYT7m1dzo/edit?usp=sharing</a>. 🤝</strong></li>
+                                <li>We highly encourage presenters to start by introducing themselves, and then either do a live demo of their app or play a pre-recorded video, please keep it between 1 minute to 3 minutes.  </li>
+                                </ol>
+
+                            <div style="border: 2px solid #0087b4; border-radius: 6px; background: #ccf8fe; color: #006273; padding: 8px; margin-top: 8px;">
+                                <p class="highlight-text" style="background: transparent; color: inherit; border-radius: 0; padding: 0; margin: 0;">
+                                    At the Event on Nov 1st, please <strong>join the Zoom call</strong> and be ready to share your screen.
+                                </p>
+                                <ul>
+                                    <li>This helps ensure <u>quick transitions</u> between presenters.</li>
+                                    <li>
+                                        <span style="font-size: 1.1em; font-weight: bold; display: inline-block; margin-top: 5px;">
+                                            <a href="https://us06web.zoom.us/j/81267830738" target="_blank" style="color: #0087b4; text-decoration: underline;">Zoom Link: https://us06web.zoom.us/j/81267830738</a>
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div>
+                    </div>
+                    <br>
+
+                    <div class="module-card">
+                        <span class="card-number">2</span>
+                        <input type="checkbox" class="task-checkbox" onchange="toggleComplete(this)">
+                        <h3>📅 Book a 1-on-1 Meeting</h3>
+                        <div class="task-content">
+                            <p class="highlight-text">Schedule  1-on-1 sessions with our facilitators for support! 🤝</p>
+                            
+                         
+                            
+                            <h4>📝 Choose Your Facilitator:</h4>
+                            <ol class="action-list">
+                                <li>👨‍💻 <strong>Farias</strong> - <a href="https://calendly.com/farias-murilo/30min" target="_blank">https://calendly.com/farias-murilo/30min</a></li>
+                                <li>👩‍💻 <strong>Helena</strong> - <a href="https://calendly.com/helena-v-88/bai-6-with-helena" target="_blank">https://calendly.com/helena-v-88/bai-6-with-helena</a></li>
+                                <li>👨‍💻 <strong>Pawel</strong> - <a href="https://calendly.com/pawel-z/byai6" target="_blank">https://calendly.com/pawel-z/byai6</a></li>
+                                <li>👨‍💻 <strong>Issam</strong> - <a href="https://calendly.com/issam-laradji-uhp1/30min?month=2025-09" target="_blank">https://calendly.com/issam-laradji-uhp1/30min?month=2025-09</a></li>
+                            </ol>
+                            
+                        </div>
+                    </div>
+
+                    <div class="module-card">
+                        <span class="card-number">3</span>
+                        <input type="checkbox" class="task-checkbox" onchange="toggleComplete(this)">
+                        <h3>🎥 Record Your Demo Video</h3>
+                        <div class="task-content">
+                            <p class="highlight-text">Record a 30 seconds to 1.5 minutes demo video of your AI app and share it on Discord! 🚀</p>
+                            
+                            <h4>📝 Action Items:</h4>
+                            <ol class="action-list">
+                                <li>🎬 <strong>Record your demo:</strong> Create a 30 seconds to 1.5 minutes video showing your app in action</li>
+                                <li>📤 <strong>Upload to YouTube:</strong> Upload as unlisted and share the link in <a href="https://discord.com/channels/1413524932213735567/1432886982685757581" target="_blank">this Discord channel</a></li>
+                                <li>💡 <strong>For inspiration:</strong> Check out <a href="https://vam-nexus.github.io/byai-6/gallery.html#gallery" target="_blank">these submitted videos</a></li>
+                            </ol>
+                        </div>
+                    </div>
+
+                          <div class="module-card">
+                         <span class="card-number">4</span>
+                         <input type="checkbox" class="task-checkbox" onchange="toggleComplete(this)">
+                         <h3>✅ Submit Week 6 Completion Form</h3>
+                        <div class="task-content">
+                            <p class="highlight-text">Submit this form to indicate you've completed this week's tasks and are ready for Demo Day! 📝</p>
+                            
+                            <p>Once you've completed all the tasks for week 6, please fill out this completion form to confirm your final preparations and demo readiness. 🏁</p>
+                            
+                            <h4>📝 Action Items:</h4>
+                            <ol class="action-list">
+                                <li>🗓️ <strong>Deadline:</strong> Sunday, Nov 2nd, 2025</li>
+                                <li>📝 <strong>Submit the form:</strong> <a href="https://forms.gle/UDtEFr9tE8pwnNyx9" target="_blank">Week 6 Completion Form</a></li>
+                            </ol>
+
+                            <h3 style="text-align: center; color: #c2f4f6; background-color: #1a1a1a; padding: 15px; border-radius: 8px;">🌟 Congratulations! 🌟</h3>
+                            <p style="text-align: center; color: #f4f4f4;">You've completed the program! You will receive a certificate of completion on Nov 9! 🎉</p>
+                            <p style="text-align: center; color: #f4f4f4;">🏆 The top 3 winners will be announced on <strong>Nov 9</strong>! Stay tuned! 🏆</p>
+
+
+
+                            
+                           
+                        </div>
+                    </div>
+
+                     <div class="module-card optional-task">
+                        <span class="card-number">Optional</span>
+                        <input type="checkbox" class="task-checkbox" onchange="toggleComplete(this)">
+                        <h3>🌐 (Optional) Host your App on a Custom Domain</h3>
+                        <div class="task-content">
+                            <p class="highlight-text" style="background-color: #2a4d3a; border-left: 4px solid #4caf50;">⚠️ This is an OPTIONAL task - you do not have to complete this week!</p>
+                            
+                            <h4>🧱 1. Create your Flask project</h4>
+                            <p>Make a new folder: <code>mkdir flask-app && cd flask-app</code></p>
+                            <p>Create <code>app.py</code> and <code>requirements.txt</code> with Flask and gunicorn</p>
+                            
+                            <h4>🧑‍💻 2. Push to GitHub</h4>
+                            <p><code>git init</code> → <code>git add .</code> → <code>git commit -m "initial commit"</code> → <code>git push</code></p>
+                            
+                            <h4>🚀 3. Deploy on Render</h4>
+                            <p>Go to <a href="https://render.com" target="_blank">render.com</a> → Sign up with GitHub → New Web Service → Choose your repo</p>
+                            <p>Settings: Python, <code>pip install -r requirements.txt</code>, <code>gunicorn app:app</code>, Free plan</p>
+                            
+                            <h4>🌐 4. Add Custom Domain</h4>
+                            <p>Note: <a href="https://cloudflare.com" target="_blank">Cloudflare</a> requires you to pay for a custom domain. Cloudflare is one of the best for this.</p>
+                            <p><a href="https://render.com" target="_blank">Render</a> → Settings → Custom Domains → Add your domain</p>
+                            <p>Get DNS target from Render</p>
+                            
+                            <h4>☁️ 5. Configure Cloudflare DNS</h4>
+                            <p>Add CNAME record: <code>www</code> → <code>your-app-name.onrender.com</code></p>
+                            
+                            <h4>🔒 6. SSL/HTTPS</h4>
+                            <p><a href="https://cloudflare.com" target="_blank">Cloudflare</a>: SSL mode to Full (Strict) | <a href="https://render.com" target="_blank">Render</a>: Enable Force HTTPS</p>
+                            
+                            <p><strong>Alternatives:</strong> You can use Hugging Face Spaces instead, but Render.com might work better. There are other hosting providers too.</p>
+                            
+                            <p style="color: #4caf50; font-weight: bold;">🔁 Auto-updates: Push to GitHub → Render auto-redeploys! 🎉</p>
+                        </div>
+                    </div>
+
+                    <div class="module-card optional-task">
+                        <span class="card-number">Optional</span>
+                        <input type="checkbox" class="task-checkbox" onchange="toggleComplete(this)">
+                        <h3>💳 (Optional) Integrate Stripe Payments with your App</h3>
+                        <div class="task-content">
+                            <p class="highlight-text" style="background-color: #2a4d3a; border-left: 4px solid #4caf50;">⚠️ This is an OPTIONAL advanced task!</p>
+                            
+                            <h4>💻 1. Install & Configure</h4>
+                            <p>Add to <code>requirements.txt</code>: <code>stripe</code>, <code>python-dotenv</code></p>
+                            <p>Get API keys from <a href="https://dashboard.stripe.com/apikeys" target="_blank">Stripe → Developers → API Keys</a>:</p>
+                            <ul>
+                                <li><code>STRIPE_PUBLISHABLE_KEY</code> = pk_test_... (Publishable key)</li>
+                                <li><code>STRIPE_SECRET_KEY</code> = sk_test_... (Secret key)</li>
+                                <li><code>PRICE_ID</code> = price_... (Create Product → Price, copy Price ID)</li>
+                            </ul>
+                            <p>Set these in <a href="https://render.com" target="_blank">Render</a> → Service → Environment</p>
+                            
+                            <h4>🐍 2. Flask Backend</h4>
+                            <p>Add routes: <code>/create-checkout-session</code>, <code>/success</code>, <code>/webhook</code></p>
+                            <p>Use <code>stripe.checkout.Session.create()</code> for payments</p>
+                            
+                            <h4>🌐 3. Frontend</h4>
+                            <p>Create <code>templates/</code> with <code>index.html</code>, <code>success.html</code>, <code>cancel.html</code></p>
+                            <p>Use <a href="https://stripe.com/docs/js" target="_blank">Stripe.js</a>: <code>stripe.redirectToCheckout()</code></p>
+                            
+                            <h4>⚙️ 4. Stripe Dashboard</h4>
+                            <p>Go to <a href="https://dashboard.stripe.com" target="_blank">Stripe Dashboard</a> → Create Product + Price → Copy Price ID</p>
+                            <p>Add webhook endpoint: <code>https://yourdomain.com/webhook</code></p>
+                            <p>Use test mode with test cards (4242 4242 4242 4242)</p>
+                            
+                            <p style="color: #4caf50; font-weight: bold;">💡 Test locally with Stripe CLI: <code>stripe listen --forward-to localhost:10000/webhook</code></p>
+                        </div>
+                    </div>
+
+                   
+                    
+                
+                  
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="scripts.js"></script>
+</body>
+</html>
