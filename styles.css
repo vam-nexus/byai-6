@@ -904,6 +904,25 @@ body {
             gap: 20px;
             margin-top: 30px;
         }
+
+        /* Section Divider Styling */
+        .section-divider {
+            grid-column: 1 / -1;
+            text-align: center;
+            margin: 40px 0 20px 0;
+            padding: 20px 0;
+            border-top: 2px solid rgba(125, 211, 252, 0.3);
+            border-bottom: 1px solid rgba(125, 211, 252, 0.1);
+        }
+
+        .section-divider h3 {
+            color: #7dd3fc;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
         
         .video-item {
             background: rgba(255, 255, 255, 0.05);
